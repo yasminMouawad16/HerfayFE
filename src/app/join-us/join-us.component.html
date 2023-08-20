@@ -1,0 +1,283 @@
+<div class="content">
+    <div class="about-atlas">
+        <h4>{{ 'join2' | translate }}</h4>
+        <h2>{{ 'atlas' | translate }}</h2>
+    </div>
+
+    <div class="containForms">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+
+        <div class="formBox">
+            <button (click)="toggleCrafter()" [ngClass]="carfterVisible ? 'btnActive' : 'btnNonActive'">
+               {{ 'Nominatecrafter' | translate }}</button>
+            <button (click)="toggleRegister()" [ngClass]="registerVisible ? 'btnActive' : 'btnNonActive'">
+               {{ 'RegisterSelf' | translate }}</button>
+
+            <div [@contentAnimation]="carfterVisible ? 'visible' : 'hidden'" class="divFormData">
+
+                  <h4>{{ 'PutFriend' | translate }}</h4>
+                  <p>{{ 'joinContent1' | translate }}</p>
+
+                  <div class="detailsBox">
+                      <div class="personalInfo">
+                        <h6>{{ 'YourInfo' | translate }}</h6>
+                        <div class="form-group mb-4 row borderBottom">
+                           <div class="col-sm-2">
+                              <label class="form-label">{{ 'FullName' | translate }}</label>
+                           </div>
+                           <div class="col-sm-10">
+                             <input type="text" class="form-control">
+                           </div>
+                        </div>
+
+                        <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-4">
+                               <label class="form-label">{{ 'phoneNumber' | translate }}</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-2">
+                               <label class="form-label">{{ 'subject' | translate }}</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-3">
+                               <label class="form-label">{{ 'email' | translate }}</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        
+                      </div>
+
+                      <div class="nomineeInfo">
+                        <h6>{{ 'NomineeInfo' | translate }}</h6>
+                        <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-2">
+                               <label class="form-label">{{ 'Craft' | translate }}</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-4">
+                               <label class="form-label">{{ 'CraftpersonName' | translate }}</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                      
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-5">
+                               <label class="form-label">{{ 'BusinesssPhone' | translate }}</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-4">
+                               <label class="form-label">{{ 'WebsiteLinks' | translate }}</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        
+                      </div>
+                  </div>
+                  <button class="btnSubmit">{{ 'submit' | translate }}</button>
+            </div> 
+
+            <div [@contentAnimation]="registerVisible ? 'visible' : 'hidden'" class="divFormData">
+
+                <h4>Register yourself on atlas herafy</h4>
+                <p>fill in the sections below to be included in our database,
+                    you will be connected by the team to verify the information
+                </p>
+
+                <div class="detailsBox">
+                    <div class="personalInfo box2">
+                        <h6>Personal Information</h6>
+                        <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-3">
+                               <label class="form-label">Full Name</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-6">
+                               <label class="form-label">Phone Number | +2</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-2">
+                               <label class="form-label">Job</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-2">
+                               <label class="form-label">Email</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                    
+                    </div>
+
+                    <div class="businessInfo">
+                        <h6 class="w-100">Business Information</h6>
+
+                        <div>
+                        <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-4">
+                               <label class="form-label">Brand Name</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-2">
+                               <label class="form-label">Local</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <select class="form-select">
+                                    <option></option>
+                                </select>
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-2">
+                               <label class="form-label">Craft</label>
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-3">
+                               <label class="form-label">Heritage</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-6">
+                               <label class="form-label">Product You Create</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-7">
+                               <label class="form-label">Number Of Employee</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        </div>
+                        
+                        <div>
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-5">
+                               <label class="form-label">Businesss type</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <select class="form-select">
+                                    <option></option>
+                                </select>
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-7">
+                               <label class="form-label">Businesss Address</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-7">
+                               <label class="form-label">Businesss Number | +2</label>
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-5">
+                               <label class="form-label">Businesss Email</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="email" class="form-control">
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-5">
+                               <label class="form-label">Social Media</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        
+                         <div class="form-group mb-4 row borderBottom">
+                            <div class="col-sm-5">
+                               <label class="form-label">Website</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control">
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btnSubmit">Submit</button>
+            </div> 
+
+              
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+.footer{
+    padding: 2rem 5%;
+    background-color: #0024B6;
+    background-image: url('../../../assets/images/footer.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; 
+    font-family: 'Trap-Regular';
+}
+
+.footer .itemBox{
+    width: 22%;
+    color: #fff;
+}
+
+.footer .itemBox p{
+    margin-left: 0;
+    text-align: left;
+}
+
+
+.footer .footLogo{
+     margin-right: 7%;
+}
+
+.footer .joinBox{
+    width: 14%;
+    margin-left: 10%;
+}
+
+.itemBox img{
+   width: 40%;
+   margin-bottom: 8px;
+}
+
+.itemBox p{
+    font-size: 12px;
+    font-weight: 300;
+}
+.footer .itemBox ul{
+    list-style-type: none;
+}
+
+.itemBox ul li{
+    margin-bottom: 7px;
+}
+.itemBox ul li a{ 
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.itemBox ul li a:hover{
+    text-decoration: underline;
+}
+
+.itemBox button{
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    border-radius: 9px;
+    margin-bottom: 16px;
+}
+
+.itemBox button:hover{
+    color: #0024B6;
+    background-color: #fff;
+}
+
+.itemBox h4{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.itemBox .icons{
+    display: flex; 
+}
+
+.icons a{
+    margin-right: 1rem;
+    border-radius: 50%;
+    padding: 7px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+
+.icons a:hover{
+    border: 2px solid #fff;
+    
+}
+
+.footer hr{
+    height: 2px;
+    width: 100%;
+    color: #ccc9c9;
+}
+
+.footer p{
+    color: #d0d0d0;
+    text-align: center;
+    margin-left: 37%;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+
+.arDiraction{
+    direction: rtl;
+}
+
+ .arDiraction .itemBox p{
+    text-align: right;
+    font-weight: 600;
+ }
+
+ .arDiraction .copyRight{
+    margin-right: 40%;
+    font-weight: bold;
+ }
+
+.enDiraction{
+    direction: ltr;
+}
+
+@media screen and (max-width: 600px) {
+
+    .footer .itemBox{
+        width: 45%;
+    }
+
+    .footer .itemBox ul{
+        padding-left: 0;
+    }
+
+    .itemBox button{
+        padding: 9px 9px;
+    }
+}

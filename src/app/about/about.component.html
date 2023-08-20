@@ -1,0 +1,61 @@
+<div class="content">
+    <div class="about-atlas">
+        <h4>{{ 'about' | translate }}</h4>
+        <h2>{{ 'atlas' | translate }}</h2>
+    </div>
+
+    <div class="platform">
+
+      <div class="left"></div>
+      <div class="right"></div>
+
+
+        <div class="textBox">
+             <h3>{{ 'platform' | translate }}</h3>
+             <p>{{ 'platformContent1' | translate }}</p>
+
+             <p>{{ 'platformContent2' | translate }} </p>
+        </div>
+
+        <div class="slidImg">
+          <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let slide of imagesCrafts; let i = index">
+                <ng-template carouselSlide [id]="slide.id">
+                  <img [src]="slide">
+                </ng-template>
+            </ng-container> 
+          </owl-carousel-o>
+        </div>
+    </div>
+
+    <div class="details">
+
+      <div class="leftRotated"></div>
+
+       <div class="item">
+            <h4>{{ 'specialThanks' | translate }}</h4>
+            <p>{{ 'MahmoudRazik' | translate }}</p>
+            <p>{{ 'RadwaHelel' | translate }}</p>
+            <p>{{ 'MahmoudFawzy' | translate }}</p> 
+       </div>
+
+      <div class="item">
+        <h4>{{ 'PhotoDoc' | translate }}</h4>
+          <p>{{ 'RehabEldalil' | translate }}</p>
+          <p>{{ 'TriiipleStudios' | translate }}</p>
+          <p>{{ 'MahmoudTaher' | translate }}</p>
+      
+     </div>
+
+    <div class="item collectionDiv">
+      <h3>{{ 'dataCollection' | translate }}</h3>
+      <p>{{ 'dataContent' | translate }} </p>
+  </div>
+    </div>
+</div>
+
+<div class="containBottom">
+
+  <div class="bottom"></div>
+  <app-how-to-use-about></app-how-to-use-about>
+</div>

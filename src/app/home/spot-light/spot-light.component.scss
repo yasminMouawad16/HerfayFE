@@ -1,0 +1,107 @@
+.content{
+    display: flex;
+    flex-wrap: wrap; 
+    margin-bottom: 5rem;
+}
+
+.content .greenBox{
+    width: 35%;
+    background-color: #048869;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 0;
+    padding-top: 7%;
+}
+
+.greenBox h2{
+    font-weight: bold;
+    font-size: 6rem;
+    margin-bottom: 22px;
+    font-family: 'Trap-Bold';
+}
+
+.greenBox h3{
+    text-align: left;
+    margin-left: 28%;
+    font-size: 21px;
+}
+
+.greenBox h4{
+    text-align: left;
+    margin-left: 36% !important;
+    font-size: 19px !important;
+    margin-bottom: 0px;
+}
+
+.greenBox h4 img{
+    width: 18px;
+    margin-left: 2px;
+}
+
+.content .textBox{
+    width: 65%;
+    background-image: url('../../../assets/images/_DSC82391.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem 6rem;
+    color: #fff;
+}
+
+.textBox h5{
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 2rem;
+   font-family: 'Trap-Bold';
+}
+
+.textBox p{
+    width: 58%;
+    font-size: 14px;
+    color: #e9e9e9;
+    margin-bottom: 1rem;
+}
+
+
+.arDiraction{
+    direction: rtl;
+}
+
+.arDiraction .greenBox h3{
+    text-align: revert;
+    margin-bottom: 30px;
+}
+
+.arDiraction .greenBox h2{
+    margin-bottom: 0px;
+}
+
+.arDiraction .greenBox h4{
+    text-align: revert;
+}
+
+.enDiraction{
+    direction: ltr;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .content .greenBox{
+        width: 100%;
+    }
+
+    .content .textBox{
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+
+    .textBox h5{
+        font-size: 17px;
+    }
+
+    .textBox p{
+        width: 97%;
+    }
+
+}

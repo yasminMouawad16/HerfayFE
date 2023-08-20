@@ -1,0 +1,218 @@
+ 
+
+ 
+.content{
+    width: 100%;
+    height: 100vh;
+    padding-top: 17%;
+    color: #fff;
+    background-image: url('../../assets/images/Group 4058.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.content .textBox{
+    padding-left: 7%; 
+}
+
+.content .textBox h3{
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1px;
+    margin-bottom: 39px;
+    font-family: 'Trap-Bold';
+}
+
+.content .textBox h1{
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-family: 'Trap-Bold';
+}
+
+.content .textBox h5{
+    font-size: 16px;
+    font-weight: 400;
+    color: #cbc3c3;
+    font-family: 'Trap-Light';
+}
+
+.content .searchBox{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 6rem;
+    border-radius: 10px;
+    background-color: #0024B6;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.searchBox h3{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+
+.searchBox h6{
+    font-size: 10px;
+    color: #d7d3d3;
+    font-weight: 300;
+}
+
+.searchBox .box{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+ 
+
+.btnSearch{
+    background-color: #F77474;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    padding: 1rem 2.4rem;
+    border-radius: 8px;
+}
+
+// .mat-select{
+//     background-color: transparent;
+// }
+
+::ng-deep .mat-form-field {
+    border: #cbc3c3;
+}
+
+::ng-deep .mat-label{
+    color: #fff;
+}
+
+::ng-deep .mat-mdc-form-field .mdc-text-field--outlined {
+    color: #fff;
+}
+
+::ng-deep .mdc-text-field--filled{
+    background-color: #3651BF !important; 
+   border-radius: 10px !important;
+}
+::ng-deep .mat-mdc-select-value{
+   color: #fff;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper{
+    width: 92% !important;
+}
+
+::ng-deep .mat-form-field-outline {
+    outline-color: #fff; 
+}
+
+.mdc-notched-outline{
+  height: 90%;
+}
+
+  .searchBox h5{
+    color: #cdcaca;
+    margin-bottom: 0px;
+  }
+
+  .searchBox h5 a{
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: underline;
+  }
+
+.bgCotainer{
+    position: relative;
+}
+
+.bgCotainer .left{
+        position: absolute;
+        top: -14%;
+        left: 0%;
+        width: 31%;
+        height: 24%;
+        z-index: 1;
+        background-image: url('../../assets/images/left-bg.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+.bgCotainer .longLeft{
+    position: absolute;
+    top: 16%;
+    left: 0%;
+    width: 16%;
+    height: 48%;
+    z-index: -1;
+    background-image: url('../../assets/images/long-left-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.bgCotainer .right{
+    position: absolute;
+    top: -16%;
+    right: 0%;
+    width: 21%;
+    height: 38%;
+    background-image: url('../../assets/images/right-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bgCotainer .bottom{
+    position: absolute;
+    bottom: 2%;
+    right: 0%;
+    width: 105%;
+    height: 34%;
+    z-index: -1;
+    background-image: url('../../assets/images/bottom-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 600px) {
+     
+    .textBox{
+        padding-top: 60%;
+    }
+
+
+    .content .textBox h3{
+        margin-bottom: 20px;
+    }
+
+    .content .textBox h1{
+       font-size: 44px; 
+       margin-bottom: 0.5rem;
+    }
+
+    .content .searchBox{
+        width: 82%;
+    }
+
+    .searchBox h3{
+       font-size: 17px;
+       margin-bottom: 0px;
+    }
+
+    .searchBox h6{
+        font-size: 11px;
+    }
+
+     
+  }

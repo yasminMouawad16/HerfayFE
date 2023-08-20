@@ -1,0 +1,256 @@
+.content .about-atlas{
+    background-image: url('../../assets/images/Mask_group22.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 20% 7%;
+    padding-bottom: 2%;
+    height: 550px;
+}
+
+.about-atlas h4{
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+    margin-bottom: 45px;
+}
+
+.about-atlas h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+ 
+
+.platform{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    font-family: 'Trap-Medium';
+}
+
+.platform .left{
+    position: absolute;
+    top: -38%;
+    left: -9%;
+    width: 33%;
+    height: 63%;
+    z-index: -1;
+    background-image: url('../../assets/images/left-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.platform .right{
+position: absolute;
+top: 2%;
+right: -5%;
+width: 22%;
+height: 102%;
+background-image: url('../../assets/images/right-bg.png');
+background-position: center center;
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+.platform .textBox{
+    width: 45%;
+}
+
+.textBox h3{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+
+
+.textBox p{
+  color: #4c4c4c;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.textBox .btnVisit{
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    background-color: #0024b6;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.platform .slidImg{
+    width: 50%;
+}
+
+
+::ng-deep .owl-carousel .owl-item img{
+  width: 94% !important;
+  border-radius: 12px !important;
+}
+
+::ng-deep .owl-theme .owl-nav [class*=owl-]{
+  background: #0024bc;
+  padding: 7px 7px;
+  border-radius: 50%;
+}
+
+
+.details{
+    background-image: url('../../assets/images/atlas-15\ 5.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 3rem 5%;
+    background-color: #D5DDEF;
+    margin: 5rem 0;
+    font-family: 'Trap-Medium';
+}
+ 
+.details h3{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+    text-align: center;
+}
+
+.details .slidersImg{
+    width: 90%;
+    margin: 3rem auto;
+    margin-bottom: 0;
+}
+
+
+.details .slidersImg img{
+    width: 40% !important; 
+}
+
+
+.moreData{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 3rem auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    font-family: 'Trap-Medium';
+}
+
+.moreData .imgbox{
+    background-image: url('../../assets/images/Group 3918.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 45%;
+    border-radius: 12px;
+    height: 250px;
+}
+
+.moreData .textItem{
+    width: 53%;
+    font-family: 'Trap-Medium';
+}
+
+.moreData .bottom{
+    position: absolute;
+    bottom: -59%;
+    left: -19%;
+    width: 122%;
+    height: 239%;
+    z-index: -1;
+    background-image: url('../../assets/images/bottom-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.arDiraction{
+    direction: rtl;
+}
+
+.arDiraction .platform .slidImg{
+    direction: ltr;
+}
+
+.arDiraction .details .slidersImg{
+    direction: ltr;
+}
+
+.arDiraction .moreData .textItem{
+    text-align: right;
+}
+
+.enDiraction{
+    direction: ltr;
+}
+
+
+@media screen and (max-width: 600px) {
+ 
+    .content .about-atlas{
+        padding: 40% 6%;
+        height: 288px;
+    }
+
+    .about-atlas h4{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about-atlas h2{
+        font-size: 3rem;
+    }
+
+    .platform .textBox{
+        width: 90%;
+    }
+
+    .platform .slidImg{
+        width: 98%;
+    }
+
+    .details{
+        flex-wrap: wrap;
+    }
+
+    .details .item{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 33px;
+    }
+
+    .textBox h3{
+        font-size: 20px;
+    }
+
+    .textBox .btnVisit{
+        margin-bottom: 20px;
+    }
+
+    .details h3{
+        font-size: 23px;
+    }
+
+    .details .slidersImg img{
+        width: 69% !important;
+    }
+
+
+    .moreData .imgbox{
+       order: 2;
+        width: 98%;
+    }
+    
+    .moreData .textItem{
+        width: 98%;
+    }
+}

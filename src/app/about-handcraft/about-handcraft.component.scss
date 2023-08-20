@@ -1,0 +1,151 @@
+.content .about-atlas{
+    background-image: url('../../assets/images/NAFSD-7.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 19% 7%;
+    padding-bottom: 2%;
+    height: 550px;
+}
+
+.about-atlas h4{
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+    margin-bottom: 45px;
+}
+
+.about-atlas h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+
+
+
+.details{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    font-family: 'Trap-Medium';
+}
+
+
+.details .left{
+        position: absolute;
+        top: -34%;
+        left: -7%;
+        width: 33%;
+        height: 69%;
+        z-index: -1;
+        background-image: url('../../assets/images/left-bg.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+.details .right{
+    position: absolute;
+    top: 2%;
+    right: -5%;
+    width: 20%;
+    height: 89%;
+    z-index: -1;
+    background-image: url('../../assets/images/right-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.details .bottom{
+    position: absolute;
+    top: 55%;
+    left: -15%;
+    width: 88%;
+    height: 64%;
+    z-index: -1;
+    background-image: url('../../assets/images/bottom-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.details .textBox{
+    width: 45%;
+}
+
+.textBox h3{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+
+
+.textBox p{
+  color: #4c4c4c;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-family: 'Trap-Medium';
+}
+.details .imgsBox{
+    width: 50%;
+}
+
+.imgsBox img{
+    height: 220px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+.arDiraction{
+    direction: rtl;
+}
+
+
+.enDiraction{
+    direction: ltr;
+}
+
+@media screen and (max-width: 600px) {
+ 
+    .content .about-atlas{
+        padding: 40% 5%;
+        height: 288px;
+    }
+
+    .about-atlas h4{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about-atlas h2{
+        font-size: 2rem;
+    }
+
+    .details .textBox{
+        width: 90%;
+    } 
+
+    .details .imgsBox{
+        width: 100%;
+    }
+
+    .details .imgsBox img:first-child{
+        width: 99% !important;
+    }
+
+    .details .imgsBox img{
+        width: 47% !important;
+    }
+
+
+    .details .imgsBox img:last-child{
+        width: 99% !important;
+    }
+
+}

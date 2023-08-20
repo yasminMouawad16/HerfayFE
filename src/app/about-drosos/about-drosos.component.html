@@ -1,0 +1,59 @@
+<div class="content">
+    <div class="about-atlas">
+        <h4>{{ 'about' | translate }}</h4>
+        <h2>{{ 'drososFoundation' | translate }}</h2>
+    </div>
+
+    <div class="platform">
+
+      <div class="left"></div>
+      <div class="right"></div>
+
+        <div class="textBox">
+             <h3>{{ 'aboutDrosos' | translate }}</h3>
+             <p>{{ 'dROSOSContent1' | translate }}</p>
+
+             <p>{{ 'dROSOSContent2' | translate }}</p>
+
+             <button class="btnVisit">{{ 'visitDrosos' | translate }}</button>
+        </div>
+
+        <div class="slidImg">
+          <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let slide of imagesCrafts; let i = index">
+                <ng-template carouselSlide [id]="slide.id">
+                  <img [src]="slide.img">
+                </ng-template>
+            </ng-container> 
+          </owl-carousel-o>
+        </div>
+    </div>
+
+    <div class="details">
+      <h3>{{ 'sampleProjects' | translate }}</h3>
+      <div class="slidersImg">
+        <owl-carousel-o [options]="customOptionsSlider2">
+          <ng-container *ngFor="let slide of sppurtedProjects; let i = index">
+              <ng-template carouselSlide [id]="slide.id">
+                <img [src]="slide.img">
+              </ng-template>
+          </ng-container> 
+        </owl-carousel-o>
+      </div>
+    </div>
+
+
+    
+<div class="moreData">
+  <div class="imgbox">
+
+  </div>
+
+  <div class="textItem">
+    <p>{{ 'dROSOSContent3' | translate }}</p>
+  </div>
+
+  <div class="bottom"></div>
+</div>
+</div>
+ 

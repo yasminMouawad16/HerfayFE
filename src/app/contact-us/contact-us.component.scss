@@ -1,0 +1,165 @@
+.content .about-atlas{
+    background-image: url('../../assets/images/Mask group.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 27% 7%;
+    padding-bottom: 2%;
+    height: 550px;
+}
+
+
+.about-atlas h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+
+.content .contactForm{ 
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.contactForm .left{
+        position: absolute;
+        top: -34%;
+        left: -4%;
+        width: 35%;
+        height: 76%;
+        z-index: -1;
+        background-image: url('../../assets/images/left-bg.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+.contactForm .right{
+    position: absolute;
+    top: -12%;
+    right: 3%;
+    width: 22%;
+    height: 102%;
+    background-image: url('../../assets/images/right-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.contactForm .box{
+    width: 65%;
+    margin: 7rem auto;
+    padding: 4rem;
+    border-radius: 3px; 
+    background-color: rgba(255,255,255,0.4);
+    box-shadow: 0px 0px 3px #ddd;
+    font-family: 'Trap-Medium';
+}
+
+.box h4{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.box input{
+    border: none;
+    border-radius: 0;
+    padding-left: 0;
+    outline: none;
+}
+
+
+.borderBottom{
+    border-bottom: 1px solid #2F2C39;
+}
+
+.form-label{
+    margin-left: -11px;
+}
+
+.box textarea{
+    border: 1px solid #2F2C39;
+   
+    margin-left: -11px;
+}
+
+
+.noPadding{
+    padding-right: 0px;
+}
+
+.checkTerms{
+    width: 3%;
+}
+
+
+.Termscontent{
+   width: 97%;
+}
+
+.box .inputCheck{
+    width: 20px;
+    height: 20px;
+}
+
+.box button{
+    width: 16%;
+    border: none;
+    padding: 8px;
+    border-radius: 7px;
+    margin: 2.5rem auto;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: #0024b6;
+}
+
+
+.arDiraction{
+    direction: rtl;
+}
+
+
+.enDiraction{
+    direction: ltr;
+}
+
+
+@media screen and (max-width: 600px) {
+ 
+    .content .about-atlas{
+        padding: 40% 6%;
+        height: 288px;
+    }
+
+    .about-atlas h4{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about-atlas h2{
+        font-size: 3rem;
+    }
+
+
+    .contactForm .box{
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .checkTerms{
+        width: 8%;
+    }
+
+    .Termscontent{
+        width: 92%;
+    }
+
+    .box button{
+        width: 23%;
+    }
+   
+}

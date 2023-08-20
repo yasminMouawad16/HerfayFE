@@ -1,0 +1,77 @@
+<div class="content">
+  <div class="textBox" id="textBox">
+    <h3>{{ 'wlecome' | translate }}</h3>
+    <h1>{{ 'atlas' | translate }}</h1>
+    <h5>{{ 'subTitle' | translate }}</h5>
+  </div>
+
+    <div class="searchBox">
+         <h3>Explore handicrafts in Egypt</h3>
+         <h6>please Specify your Craft</h6>
+         
+         <div class="box">
+             <div class="boxItem">
+                <mat-form-field>
+                    <mat-label>Select Craft</mat-label>
+                    <mat-select [disabled]="disableSelect.value">
+                      <mat-option value="All">All</mat-option>
+                      <mat-option value="Art pieces">Art pieces</mat-option>
+                      <mat-option value="Calligraphy">Calligraphy</mat-option> 
+                    </mat-select>
+                  </mat-form-field>
+
+             </div>
+
+             <div class="boxItem">
+                <mat-form-field>
+                    <mat-label>Select Sub Craft</mat-label>
+                    <mat-select [disabled]="disableSelect.value">
+                      <mat-option value="All">All</mat-option>
+                      <mat-option value="Art pieces">Art pieces</mat-option>
+                      <mat-option value="Calligraphy">Calligraphy</mat-option> 
+                    </mat-select>
+                  </mat-form-field>
+             </div>
+
+             <div class="boxItem">
+                <mat-form-field>
+                    <mat-label>Select Location</mat-label>
+                    <mat-select [disabled]="disableSelect.value">
+                      <mat-option value="All">All</mat-option>
+                      <mat-option value="Art pieces">Art pieces</mat-option>
+                      <mat-option value="Calligraphy">Calligraphy</mat-option> 
+                    </mat-select>
+                  </mat-form-field>
+             </div>
+
+             <div class="boxItem"> 
+                <mat-form-field>
+                    <mat-label>Select heritage</mat-label>
+                    <mat-select [disabled]="disableSelect.value">
+                      <mat-option value="All">All</mat-option>
+                      <mat-option value="Art pieces">Art pieces</mat-option>
+                      <mat-option value="Calligraphy">Calligraphy</mat-option> 
+                    </mat-select>
+                  </mat-form-field>
+             </div>
+
+             <div>
+                <button  class="btnSearch">Search</button>
+             </div>
+         </div>
+
+         <hr>
+
+         <h5>Not looking for anything specific? <a>Explore</a></h5>
+    </div>
+</div>
+
+<div class="bgCotainer">
+  <div class="left"></div>
+  <div class="right"></div>
+  <div class="longLeft"></div>
+  <div class="bottom"></div>
+  <app-why-atlas></app-why-atlas>
+  <app-spot-light></app-spot-light>
+  <app-how-to-use></app-how-to-use>
+</div>

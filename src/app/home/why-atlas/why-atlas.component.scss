@@ -1,0 +1,145 @@
+.content{
+    margin: 0 auto;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content .imgBox{
+    width: 48%;
+    background-image: url('../../../assets/images/image16.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 12px;
+    
+}
+
+.imgBox button{
+   border: none;
+   background-color: transparent;
+}
+
+.imgBox .btnShow{
+    position: absolute;
+    top: 20px;
+    right: 15%;
+    color: #fcfcfc;
+    font-size: 16px;
+    padding: 6px 10px;
+    background-color: rgba(37 ,37 ,37 ,40%);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.imgBox .btnVideo{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    color: #fcfcfc;
+    font-size: 24px;
+    padding: 11px 16px;
+    background-color: rgba(37, 37, 37, 0.4);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.content .textBox{
+    width: 48%;
+}
+
+
+.textBox h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: #2F2C39;
+    font-family: 'Trap-Bold';
+}
+
+.textBox p{
+    color: #747171;
+    font-size: 13px;
+}
+
+.textBox h6{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.textBox .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    flex-wrap: wrap;
+}
+
+.icons .iconItem{
+    width: 48%;
+    display: flex; 
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.iconItem img{
+    margin-right: 9px;
+    width: 33px;
+    margin-top: 5px;
+}
+
+.iconItem h3{
+    font-size: 24px;
+    color: #FCBF28;
+    margin-bottom: 1px;
+}
+
+.iconItem .blueText{
+   color: #0024B6;
+}
+
+.iconItem .blueRed{
+   color: #F77474;
+}
+
+.iconItem .blueGreen{
+   color: #058869;
+}
+
+.iconItem span{
+   font-size: 10px;
+}
+
+
+.imgIcon{
+    margin-left: 9px;
+}
+ 
+
+
+@media screen and (max-width: 600px) {
+
+    .content{
+        padding-top: 57%;
+        width: 92%;
+    }
+
+    .content .imgBox{
+        width: 100%;
+        order: 2;
+        height: 29vh;
+    }
+
+    .content .textBox{
+        width: 100%;
+        order: 1;
+    }
+
+    .textBox .icons{
+        width: 97%
+    }
+}

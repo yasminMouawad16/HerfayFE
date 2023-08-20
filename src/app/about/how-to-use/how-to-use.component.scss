@@ -1,0 +1,75 @@
+.content{
+    padding: 5rem 7%;
+    text-align: center;
+    font-family: 'Trap-Medium';
+ }
+ 
+ .content h3{
+     font-size: 30px;
+     font-weight: bold;
+     font-family: 'Trap-Bold';
+ }
+ 
+ .content p{
+     color: #707070;
+     margin-bottom: 26px;
+     font-family: 'Trap-Medium';
+ }
+ 
+ .content .imgBox {
+     position: relative;
+ }
+ 
+ .content .imgBox img{ 
+     width: 95%;
+     border-radius: 15px;
+     
+ }
+ 
+ .imgBox button{
+    border: none;
+    background-color: transparent;
+ }
+ 
+ .imgBox .btnShow{
+     position: absolute;
+     top: 20px;
+     right: 5%;
+     color: #fcfcfc;
+     font-size: 17px;
+     padding: 8px 12px;
+     background-color: rgba(37, 37, 37, 0.4);
+     border-radius: 8px;
+     text-align: center;
+ }
+ 
+ .imgBox .btnVideo{
+     position: absolute;
+     top: 43%;
+     left: 47%;
+     color: #fcfcfc;
+     font-size: 33px;
+     padding: 15px 20px;
+     background-color: rgba(37, 37, 37, 0.4);
+     border-radius: 8px;
+     text-align: center;
+ }
+ 
+
+ .details{
+    width: 80%;
+    margin: 3rem auto;
+ }
+ 
+
+ @media screen and (max-width: 600px) {
+
+    .content h3{
+        font-size: 24px;
+    }
+
+    .imgBox .btnVideo{
+        padding: 11px 11px;
+        font-size: 21px;
+    }
+ }

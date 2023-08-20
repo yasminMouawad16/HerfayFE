@@ -1,0 +1,223 @@
+.content .about-atlas{
+    background-image: url('../../assets/images/_DSC40441.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 19% 7%;
+    padding-bottom: 2%;
+    height: 550px;
+}
+
+.about-atlas h4{
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+    margin-bottom: 45px;
+}
+
+.about-atlas h2{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+ 
+
+.platform{
+    width: 90%;
+    margin: 4rem auto;
+    margin-top: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    font-family: 'Trap-Bold';
+}
+
+
+.platform .left{
+        position: absolute;
+        top: -38%;
+        left: -6%;
+        width: 33%;
+        height: 63%;
+        z-index: -1;
+        background-image: url('../../assets/images/left-bg.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+.platform .right{
+    position: absolute;
+    top: 2%;
+    right: -5%;
+    width: 22%;
+    height: 102%;
+    background-image: url('../../assets/images/right-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.platform .textBox{
+    width: 45%;
+    font-family: 'Trap-Bold';
+}
+
+.textBox h3{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trap-Bold';
+}
+
+
+.textBox p{
+  color: #4c4c4c;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-family: 'Trap-Medium';
+}
+.platform .slidImg{
+    width: 50%;
+}
+
+
+::ng-deep .owl-carousel .owl-item img{
+  width: 94% !important;
+  border-radius: 12px !important;
+}
+
+::ng-deep .owl-theme .owl-nav [class*=owl-]{
+  background: #0024bc;
+}
+
+
+.details{
+    background-image: url('../../assets/images/atlas-15\ 5.svg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding: 5rem 5%;
+    background-color: #D5DDEF;
+    margin: 5rem 0;
+    position: relative;
+    font-family: 'Trap-Medium';
+}
+
+
+.details .leftRotated{
+        position: absolute;
+        top: 3%;
+        left: 1%;
+        width: 33%;
+        height: 91%;
+        z-index: 1;
+        background-image: url('../../assets/images/left_rotated.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+
+.details .item{
+    width: 23%;
+}
+
+.details .collectionDiv{
+    width: 50%;
+}
+
+.item h4{
+    font-weight: bold;
+    font-size: 21px;
+    font-family: 'Trap-Bold';
+}
+
+
+.item h3{
+    font-weight: bold;
+    font-size: 28px;
+    font-family: 'Trap-Bold';
+}
+ 
+
+.item p{
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #4e4a4a;
+}
+
+
+.containBottom{
+    position: relative;
+}
+
+.containBottom .bottom{
+    position: absolute;
+    bottom: 2%;
+    right: 0%;
+    width: 114%;
+    height: 44%;
+    z-index: -1;
+    background-image: url('../../assets/images/bottom-bg.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.arDiraction{
+    direction: rtl;
+}
+
+.arDiraction .platform .slidImg{
+    direction: ltr;
+}
+
+.enDiraction{
+    direction: ltr;
+}
+
+
+@media screen and (max-width: 600px) {
+ 
+    .content .about-atlas{
+        padding: 40% 6%;
+        height: 288px;
+    }
+
+    .about-atlas h4{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about-atlas h2{
+        font-size: 3rem;
+    }
+
+    .platform .textBox{
+        width: 90%;
+    }
+
+    .platform .slidImg{
+        width: 98%;
+    }
+
+    
+     
+
+
+    .details{
+        flex-wrap: wrap;
+    }
+
+    .details .item{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 33px;
+    }
+}
