@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'; 
+import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { TranslateService } from '@ngx-translate/core'; 
+import { TranslateService } from '@ngx-translate/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input'; 
-import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { WhyAtlasComponent } from './home/why-atlas/why-atlas.component';
 import { SpotLightComponent } from './home/spot-light/spot-light.component';
@@ -32,6 +32,8 @@ import { AboutDrososComponent } from './about-drosos/about-drosos.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { MapComponent } from './map/map.component';
+import { HttpService } from './shared/services/http.service';
+import { AuthInterceptor } from './shared/services/auth.interceptor';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -63,7 +65,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule,  
+    MatFormFieldModule,
     CarouselModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -74,9 +76,17 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     })
- 
+
   ],
-  providers: [TranslateService],
+  providers: [
+    TranslateService,
+    HttpService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
