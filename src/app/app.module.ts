@@ -34,6 +34,9 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { MapComponent } from './map/map.component';
 import { HttpService } from './shared/services/http.service';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -68,6 +71,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     CarouselModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatProgressSpinnerModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -90,4 +101,3 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

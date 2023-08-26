@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  BASE_URL: 'https://chefshub.site/api/v1/'
+  BASE_URL: 'https://api.atlasherafy.com/api/v1/'
 };

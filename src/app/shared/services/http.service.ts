@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { LoadingService } from './loading.service';
 
 interface API {
     data: any;
@@ -20,9 +21,9 @@ export class HttpService {
 
     constructor(private http: HttpClient) { }
 
-    get<T>(apiName: string, param?: any): Observable<T> {
+    get<T>(apiName: string, param?: any): Observable<any> {
         return this.http.get<API>(`${this.serverUrl}${apiName}`, { params: param }).pipe(map((event) => {
-            return event.data;
+            return event;
         }
         ));
     }

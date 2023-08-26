@@ -7,63 +7,84 @@
       <div class="left"></div>
       <div class="right"></div>
 
-      
+
         <div class="box">
             <h4>{{ 'contactUsSubTitle' | translate }}</h4>
-            
-            <form>
-                <div class="form-group mb-4 row borderBottom"> 
+
+            <form [formGroup]="contactForm">
+                <div class="form-group mb-4 row borderBottom">
                   <div class="col-sm-1">
                     <label for="" class="form-label">{{ 'name' | translate }}</label>
                   </div>
                   <div class="col-sm-11">
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" formControlName="name" required>
                   </div>
                 </div>
-                <div class="form-group mb-4 row borderBottom"> 
+                <mat-error class="mb-4 d-block" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')">
+                  Field is required
+                </mat-error>
+                <div class="form-group mb-4 row borderBottom">
                   <div class="col-sm-3">
                     <label for="" class="form-label">{{ 'phoneNumber' | translate }}</label>
                   </div>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="">
+                    <input type="number" class="form-control" formControlName="phone_Number" required>
                   </div>
                 </div>
-                <div class="form-group mb-4 row borderBottom"> 
+                <mat-error class="mb-2 d-block" *ngIf="contactForm.get('phone_Number')?.touched && contactForm.get('phone_Number')?.hasError('required')">
+                  Field is required
+                </mat-error>
+                <mat-error class="mb-4 d-block" *ngIf="contactForm.get('phone_Number')?.touched && contactForm.get('phone_Number')?.invalid">
+                  Phone Number not valid
+                </mat-error>
+                <div class="form-group mb-4 row borderBottom">
                   <div class="col-sm-1">
                     <label for="" class="form-label">{{ 'subject' | translate }}</label>
                   </div>
                     <div class="col-sm-11">
-                      <input type="text" class="form-control" id="">
+                      <input type="text" class="form-control" formControlName="subject" required>
                     </div>
                   </div>
-                  <div class="form-group mb-4 row borderBottom"> 
+                  <mat-error class="mb-4 d-block" *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.hasError('required')">
+                    Field is required
+                  </mat-error>
+                  <div class="form-group mb-4 row borderBottom">
                     <div class="col-sm-2">
                       <label for="" class="form-label">{{ 'email' | translate }}</label>
                     </div>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="">
+                      <input type="email" class="form-control" formControlName="email" required>
                     </div>
                   </div>
+                  <mat-error class="mb-2 d-block" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')">
+                    Field is required
+                  </mat-error>
+                  <mat-error class="mb-4 d-block" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+                    Email not valid
+                  </mat-error>
 
-                  <div class="form-group mb-4 row noPadding"> 
+                  <div class="form-group mb-4 row noPadding">
                     <div class="col-sm-1">
                       <label for="" class="form-label">{{ 'description' | translate }}</label>
                     </div>
                     <div class="col-sm-12">
-                      <textarea rows="5" class="form-control" id=""></textarea>
+                      <textarea rows="5" class="form-control" formControlName="message" required></textarea>
                     </div>
                   </div>
+                  <mat-error class="mb-4 d-block" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')">
+                    Field is required
+                  </mat-error>
 
-                  <div class="form-group mb-4 row"> 
-                    
+                  <div class="form-group mb-4 row">
+
                     <div class="col-sm-12 d-flex">
                         <div class="checkTerms">
-                            <input type="checkbox" aria-label="Checkbox for following text input" class="inputCheck">
+                            <input type="checkbox" aria-label="Checkbox for following text input" class="inputCheck" formControlName="check">
                         </div>
                       <p class="Termscontent">{{ 'contactContent' | translate }}</p>
                     </div>
 
-                    <button>{{ 'submit' | translate }}</button>
+                    <button [disabled]="contactForm.invalid" (click)="sendMessage()">{{ 'submit' | translate }}</button>
                   </div>
             </form>
         </div>

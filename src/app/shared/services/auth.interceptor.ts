@@ -13,19 +13,19 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LoadingService } from './loading.service';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthInterceptor implements HttpInterceptor {
-    private token: string | null = null;
-    currentLang = localStorage.getItem('userLang');
 
     constructor(
       private spinner: NgxSpinnerService,
         private http: HttpService,
         private router: Router,
-        public toastr: ToastrService
+        public toastr: ToastrService,
+        private loadingService: LoadingService
     ) { }
 
     intercept(
@@ -35,22 +35,14 @@ export class AuthInterceptor implements HttpInterceptor {
 
         request = request.clone({
             setHeaders: {
-                "CLIENT-TYPE": 'web',
-                "CLIENT-VERSION": '1.0.0'
-                //Authorization: `Bearer ` + token
-                //"x-consumer-custom-id": "10001"
+              'Content-Type': 'application/json',
+              'Connections': 'keep-alive',
+              'Accept': '*/*'
             },
         });
 
         if (request.url.includes(environment.BASE_URL)) {
-          this.spinner.show(undefined,
-            {
-              type: 'ball-triangle-path',
-              size: 'medium',
-              bdColor: 'rgba(0, 0, 0, 0.8)',
-              color: '#fff',
-              fullScreen: true
-            });
+            this.loadingService.setLoading(true, request.url);
             return next.handle(request).pipe(
                 catchError((error: HttpErrorResponse) => {
                     if (error && (error.status === 401 || error.status === 403)) {
@@ -66,22 +58,22 @@ export class AuthInterceptor implements HttpInterceptor {
                                 error.status === 502 ||
                                 error.status === 503
                             ) {
-                              this.toastr.error(error.error.error.message ? error.error.error.message : '!Technical Error!');
+                              this.toastr.error(error.error.errors[0] ? error.error.errors[0] : '!Technical Error!');
                             } else if (error.status === 400) {
-                              this.toastr.error(error.error.error.message ? error.error.error.message : '!BAD REQUEST!');
+                              this.toastr.error(error.error.errors ? error.error.errors[0] : '!BAD REQUEST!');
                             } else if (error.status === 404) {
-                              this.toastr.error(error.error.error.message ? error.error.error.message : '!NOT FOUND!');
+                              this.toastr.error(error.error.errors ? error.error.errors[0] : '!NOT FOUND!');
                             } else if (error.status === 415) {
-                              this.toastr.error(error.error.error.message ? error.error.error.message : '!Unsupported Media Type!');
+                              this.toastr.error(error.error.errors ? error.error.errors[0] : '!Unsupported Media Type!');
                             } else {
-                              this.toastr.error(error.error.error.message ? error.error.error.message : '!!SYSTEM ERROR!');
+                              this.toastr.error(error.error.errors ? error.error.errors[0] : '!!SYSTEM ERROR!');
                             }
                         }
 
                         return throwError(error);
                     }
                 }),
-                finalize(() => this.spinner.hide())
+                finalize(() => this.loadingService.setLoading(false, request.url))
             );
         } else {
             return next.handle(request);

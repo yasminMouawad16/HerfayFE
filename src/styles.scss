@@ -3,7 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
- 
+
 
 
 @font-face{
@@ -52,3 +52,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     src: url('assets/fonts/Trap-SemiBold.otf');
 }
 
+.toast-container{
+  position: fixed;
+}
