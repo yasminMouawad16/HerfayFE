@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-lg" [ngClass]="isScrolled ? 'navbar-inverse' : 'navbar-default'"  
+  <nav class="navbar navbar-expand-lg" [ngClass]="isScrolled ? 'navbar-inverse' : 'navbar-default'"
   [ngStyle]="checkedLang == 'en' ? enDiraction : arDiraction" >
     <div class="container-fluid">
       <a class="navbar-brand" [ngClass]="{'navItem-inverse': isScrolled}">
@@ -15,7 +15,7 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/home" aria-current="page" [ngClass]="{'navItem-inverse': isScrolled}">{{ 'home' | translate }}</a>
           </li>
-          
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"  [ngClass]="{'navItem-inverse': isScrolled}"
              id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,8 +23,8 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/about">{{ 'aboutAtlas' | translate }}</a></li>
-              <li><a class="dropdown-item" routerLink="/about-handcraft">{{ 'aboutHand' | translate }}</a></li> 
-              <li><a class="dropdown-item" routerLink="/about-drosos">{{ 'aboutDrosos' | translate }}</a></li> 
+              <li><a class="dropdown-item" routerLink="/about-handcraft">{{ 'aboutHand' | translate }}</a></li>
+              <li><a class="dropdown-item" routerLink="/about-drosos">{{ 'aboutDrosos' | translate }}</a></li>
             </ul>
           </li>
 
@@ -38,14 +38,14 @@
               <button (click)="switchLanguage()" class="nav-link" [ngClass]="{'navItem-inverse': isScrolled}">
                  <i class="fa-solid fa-globe"></i> {{ 'lang' | translate }}</button>
             </li>
-  
+
             <li class="nav-item">
               <button class="nav-link btnJoin" routerLink="/join-altas">{{ 'join' | translate }}</button>
             </li>
           </div>
-          
+
         </ul>
       </div>
     </div>
 </nav>
- 
+

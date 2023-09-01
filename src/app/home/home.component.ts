@@ -31,12 +31,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.language.registerObserver(this.handleUpdate);
-    // this.http.get('users/getFilterOption').subscribe((res: any) => {
-    //   this.crafts = res.mainCraft;
-    //   this.subCrafts = res.subCraft;
-    //   this.cities = res.city;
-    //   this.heritages = res.heritage;
-    // });
+    this.http.get('users/getFilterOption').subscribe((res: any) => {
+      this.crafts = res.mainCraft;
+      this.subCrafts = res.subCraft;
+      this.cities = res.city;
+      this.heritages = res.heritage;
+    });
   }
 
   handleUpdate(data: any) {
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
         // lng: this.center?.lng || 31.233334,
         mainCraft: this.filterModel.mainCraft,
         subCraft: this.filterModel.subCraft,
-        city: this.filterModel.city,
+        governorate: this.filterModel.governorate,
         heritage: this.filterModel.heritage
       }
     });
@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit {
 }
 export class ParamsModel {
   mainCraft= null;
-  city= null;
+  governorate= null;
   heritage= null;
   subCraft= null;
 }

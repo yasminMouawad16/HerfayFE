@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LanguageService } from '../shared/services/language.service';
 
 @Component({
   selector: 'app-map',
@@ -9,15 +10,40 @@ import { ActivatedRoute } from '@angular/router';
 export class MapComponent  implements OnInit {
   filterOptions: any;
   filterModel: any;
+  showList = 'search';
+  checkLang = '';
+
+  lat = 22.4064172;
+  long = 69.0750171;
+  zoom=15;
+
+  markers = [
+        {
+            lat: 21.1594627,
+            lng: 72.6822083,
+            label: 'Surat'
+        },
+        {
+            lat: 23.0204978,
+            lng: 72.4396548,
+            label: 'Ahmedabad'
+        },
+        {
+            lat: 22.2736308,
+            lng: 70.7512555,
+            label: 'Rajkot'
+        }
+    ];
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private language:LanguageService,
     private render: Renderer2
   ) {
   }
-
   ngOnInit(): void {
-    //window.scrollTo(0, 0);
+    this.language.registerObserver(this.handleUpdate);
+    window.scrollTo(0, 0);
     // this.onGetColorIndicator();
     this.onGetData();
     // const currentLat = this.activatedRoute.snapshot.queryParams.lat;
@@ -30,14 +56,31 @@ export class MapComponent  implements OnInit {
 
   }
 
+  handleUpdate(data: any) {
+    this.checkLang =  data;
+
+    const content = document.querySelectorAll('.content');
+
+    if(this.checkLang == 'ar'){
+      content.forEach(content => {
+        content.classList.add('arDiraction');
+        content.classList.remove('enDiraction');
+      });
+    }
+    else if(this.checkLang == 'en'){
+      content.forEach(content => {
+        content.classList.remove('arDiraction');
+        content.classList.add('enDiraction');
+      });
+    }
+
+  }
+
   onGetData() {
     this.activatedRoute.queryParams.subscribe(res => {
       this.filterOptions = res;
-      if (this.filterOptions?.mainCraft || this.filterOptions?.product || this.filterOptions?.city || this.filterOptions?.heritage) {
-        this.filterModel.mainCraft = this.filterOptions.mainCraft;
-        this.filterModel.product = this.filterOptions.product;
-        this.filterModel.governorate = this.filterOptions.location;
-        this.filterModel.heritage = this.filterOptions.heritage;
+      if (this.filterOptions?.mainCraft || this.filterOptions?.subCraft || this.filterOptions?.city || this.filterOptions?.heritage) {
+        this.filterModel = this.filterOptions;
         // this.onFilterOption();
         // this.onFilter();
         return;

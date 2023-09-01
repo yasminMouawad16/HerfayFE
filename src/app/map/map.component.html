@@ -1,1 +1,210 @@
-<p>map works!</p>
+<div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" zoom="10"
+        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+      </iframe>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div class="content-flex">
+          <div class="explore">
+            <h2>{{'explore_handcarafts'|translate}}</h2>
+            <div class="tabs">
+              <div>
+                <button [ngClass]="{'active': showList=='search'}" (click)="showList='search'">{{'search' | translate}}</button>
+                <button [ngClass]="{'active': showList=='filter'}" (click)="showList='filter'"><i class="fa-solid fa-sliders"></i></button>
+              </div>
+              <button [ngClass]="{'active': showList=='crafts'}" (click)="showList='crafts'">{{'crafts_people_list' | translate}}</button>
+            </div>
+            <div class="explore-content">
+              <ng-container *ngIf="showList=='search'">
+                <select>
+                  <option>Select Craft</option>
+                  <option>Craft 1</option>
+                  <option>Craft 2</option>
+                  <option>Craft 3</option>
+                </select>
+                <select>
+                  <option>Select SubCraft</option>
+                  <option>SubCraft 1</option>
+                  <option>SubCraft 2</option>
+                  <option>SubCraft 3</option>
+                </select>
+                <select>
+                  <option>Select Location</option>
+                  <option>Location 1</option>
+                  <option>Location 2</option>
+                  <option>Location 3</option>
+                </select>
+                <select>
+                  <option>Select heritage</option>
+                  <option>heritage 1</option>
+                  <option>heritage 2</option>
+                  <option>heritage 3</option>
+                </select>
+              </ng-container>
+              <ng-container *ngIf="showList=='filter'">
+                <select>
+                  <option>Select Craft</option>
+                  <option>Craft 1</option>
+                  <option>Craft 2</option>
+                  <option>Craft 3</option>
+                </select>
+                <select>
+                  <option>Select SubCraft</option>
+                  <option>SubCraft 1</option>
+                  <option>SubCraft 2</option>
+                  <option>SubCraft 3</option>
+                </select>
+                <select>
+                  <option>Select Location</option>
+                  <option>Location 1</option>
+                  <option>Location 2</option>
+                  <option>Location 3</option>
+                </select>
+                <select>
+                  <option>Select heritage</option>
+                  <option>heritage 1</option>
+                  <option>heritage 2</option>
+                  <option>heritage 3</option>
+                </select>
+                <select>
+                  <option>Select SubCraft</option>
+                  <option>SubCraft 1</option>
+                  <option>SubCraft 2</option>
+                  <option>SubCraft 3</option>
+                </select>
+                <select>
+                  <option>Select Location</option>
+                  <option>Location 1</option>
+                  <option>Location 2</option>
+                  <option>Location 3</option>
+                </select>
+                <select>
+                  <option>Select heritage</option>
+                  <option>heritage 1</option>
+                  <option>heritage 2</option>
+                  <option>heritage 3</option>
+                </select>
+              </ng-container>
+              <ng-container *ngIf="showList=='crafts'">
+                <div class="crafts">
+                  <h3>Crafts List</h3>
+                  <div class="craft">
+                    <img class="craft-img" alt="craft" src="../../assets/images/image16.png">
+                    <div class="details">
+                      <h5>DM Home Accessories</h5>
+                      <p><i class="fa-solid fa-location-dot"></i> 6Th Of October, Giza</p>
+                      <p><i class="fa-solid fa-people-group"></i> 1-5 Workers</p>
+                      <div class="type">
+                        <ul>
+                          <li>Modern</li>
+                          <li>Wood</li>
+                          <li>Art Pieces</li>
+                        </ul>
+                        <a href="#">
+                          <i class="fa-solid fa-arrow-right"></i>
+                          View Details
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="craft">
+                    <img class="craft-img" alt="craft" src="../../assets/images/image16.png">
+                    <div class="details">
+                      <h5>DM Home Accessories</h5>
+                      <p><i class="fa-solid fa-location-dot"></i> 6Th Of October, Giza</p>
+                      <p><i class="fa-solid fa-people-group"></i> 1-5 Workers</p>
+                      <div class="type">
+                        <ul>
+                          <li>Modern</li>
+                          <li>Wood</li>
+                          <li>Art Pieces</li>
+                        </ul>
+                        <a href="#">
+                          <i class="fa-solid fa-arrow-right"></i>
+                          View Details
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="craft">
+                    <img class="craft-img" alt="craft" src="../../assets/images/image16.png">
+                    <div class="details">
+                      <h5>DM Home Accessories</h5>
+                      <p><i class="fa-solid fa-location-dot"></i> 6Th Of October, Giza</p>
+                      <p><i class="fa-solid fa-people-group"></i> 1-5 Workers</p>
+                      <div class="type">
+                        <ul>
+                          <li>Modern</li>
+                          <li>Wood</li>
+                          <li>Art Pieces</li>
+                        </ul>
+                        <a href="#">
+                          <i class="fa-solid fa-arrow-right"></i>
+                          View Details
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="actions">
+              <button class="search">{{'search' | translate}}</button>
+              <button class="clear">{{'clear' | translate}}</button>
+            </div>
+          </div>
+          <div class="indicators">
+            <button mat-button  id="menu_Id" [matMenuTriggerFor]="menu">
+              <div class="d-flex align-items-center">
+                <img alt="indicator" src="../../assets/images/woman.png">
+                <span>{{'color_indicators'|translate}}</span>
+              </div>
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <mat-menu class="indicators-menu" #menu="matMenu">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="indicator">
+                    <img alt="indicator" src="../../assets/images/woman.png">
+                    <span>Lorem Ipsum</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="indicator">
+                    <img alt="indicator" src="../../assets/images/woman.png">
+                    <span>Lorem Ipsum</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="indicator">
+                    <img alt="indicator" src="../../assets/images/woman.png">
+                    <span>Lorem Ipsum</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="indicator">
+                    <img alt="indicator" src="../../assets/images/woman.png">
+                    <span>Lorem Ipsum</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="indicator">
+                    <img alt="indicator" src="../../assets/images/woman.png">
+                    <span>Lorem Ipsum</span>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="indicator">
+                    <img alt="indicator" src="../../assets/images/woman.png">
+                    <span>Lorem Ipsum</span>
+                  </div>
+                </div>
+              </div>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

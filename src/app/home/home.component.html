@@ -13,17 +13,17 @@
              <div class="boxItem">
                 <mat-form-field>
                     <mat-label>Select Craft</mat-label>
-                    <!-- <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.mainCraft">
+                    <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.mainCraft">
                       <mat-option value="moha">All</mat-option>
                       <ng-container *ngIf="crafts.length > 0">
                         <mat-option *ngFor="let craft of crafts" [value]="craft">{{craft}}</mat-option>
                       </ng-container>
-                    </mat-select> -->
-                    <mat-select [disabled]="disableSelect.value">
+                    </mat-select>
+                    <!-- <mat-select [disabled]="disableSelect.value">
                       <mat-option value="All">All</mat-option>
                       <mat-option value="Art pieces">Art pieces</mat-option>
                       <mat-option value="Calligraphy">Calligraphy</mat-option>
-                    </mat-select>
+                    </mat-select> -->
                   </mat-form-field>
 
              </div>
@@ -31,56 +31,56 @@
              <div class="boxItem">
                 <mat-form-field>
                     <mat-label>Select Sub Craft</mat-label>
-                    <!-- <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.subCraft">
+                    <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.subCraft">
                       <mat-option value="asd">All</mat-option>
                       <ng-container *ngIf="subCrafts.length > 0">
                         <mat-option *ngFor="let subCraft of subCrafts" [value]="subCraft">{{subCraft}}</mat-option>
                       </ng-container>
-                    </mat-select> -->
-                    <mat-select [disabled]="disableSelect.value">
+                    </mat-select>
+                    <!-- <mat-select [disabled]="disableSelect.value">
                       <mat-option value="All">All</mat-option>
                       <mat-option value="Art pieces">Art pieces</mat-option>
                       <mat-option value="Calligraphy">Calligraphy</mat-option>
-                    </mat-select>
+                    </mat-select> -->
                   </mat-form-field>
              </div>
 
              <div class="boxItem">
                 <mat-form-field>
                     <mat-label>Select Location</mat-label>
-                    <!-- <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.city">
+                    <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.governorate">
                       <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="crafts.length > 0">
                         <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
                       </ng-container>
-                    </mat-select> -->
-                    <mat-select [disabled]="disableSelect.value">
+                    </mat-select>
+                    <!-- <mat-select [disabled]="disableSelect.value">
                       <mat-option value="All">All</mat-option>
                       <mat-option value="Art pieces">Art pieces</mat-option>
                       <mat-option value="Calligraphy">Calligraphy</mat-option>
-                    </mat-select>
+                    </mat-select> -->
                   </mat-form-field>
              </div>
 
              <div class="boxItem">
                 <mat-form-field>
                     <mat-label>Select heritage</mat-label>
-                    <!-- <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.heritage">
+                    <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.heritage">
                       <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="heritages.length > 0">
                         <mat-option *ngFor="let heritage of heritages" [value]="heritage">{{heritage}}</mat-option>
                       </ng-container>
-                    </mat-select> -->
-                    <mat-select [disabled]="disableSelect.value">
+                    </mat-select>
+                    <!-- <mat-select [disabled]="disableSelect.value">
                       <mat-option value="All">All</mat-option>
                       <mat-option value="Art pieces">Art pieces</mat-option>
                       <mat-option value="Calligraphy">Calligraphy</mat-option>
-                    </mat-select>
+                    </mat-select> -->
                   </mat-form-field>
              </div>
 
              <div>
-                <button class="btnSearch">Search</button>
+                <button class="btnSearch" (click)="search()">Search</button>
              </div>
          </div>
 
