@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';   
-import { TranslateService } from '@ngx-translate/core'; 
+import { Component, HostListener, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './../../shared/services/language.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { LanguageService } from './../../shared/services/language.service';
   styleUrls: ['./navabr.component.scss']
 })
 export class NavabrComponent implements OnInit {
-   
+
   isScrolled = false;
   checkedLang = '';
 
@@ -22,7 +22,7 @@ export class NavabrComponent implements OnInit {
 
 
   @HostListener("window:scroll")
-  
+
 scrollEvent() {
     window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
 }
@@ -33,7 +33,7 @@ scrollEvent() {
   }
 
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.checkedLang = 'en';
   }
 
@@ -43,13 +43,17 @@ scrollEvent() {
     this.translateService.use(newLanguage);
 
     this._LanguageService.notifyObservers(newLanguage);
- 
-    if(newLanguage == 'en')
-       this.checkedLang = 'en'
-    else
-       this.checkedLang = 'ar'
+
+    if(newLanguage == 'en'){
+       this.checkedLang = 'en';
+      this._LanguageService.setLang(this.checkedLang);
+    }
+    else{
+       this.checkedLang = 'ar';
+       this._LanguageService.setLang(this.checkedLang);
+    }
   }
 
- 
+
   }
 

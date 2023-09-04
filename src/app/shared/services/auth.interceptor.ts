@@ -14,6 +14,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LoadingService } from './loading.service';
+import { LanguageService } from './language.service';
 
 @Injectable({
     providedIn: 'root',
@@ -25,19 +26,20 @@ export class AuthInterceptor implements HttpInterceptor {
         private http: HttpService,
         private router: Router,
         public toastr: ToastrService,
-        private loadingService: LoadingService
+        private loadingService: LoadingService,
+        private _LanguageService:LanguageService
     ) { }
 
     intercept(
         request: HttpRequest<any>,
         next: HttpHandler
     ): Observable<HttpEvent<any>> {
-
+        var lang = this._LanguageService.getLang();
         request = request.clone({
             setHeaders: {
               'Content-Type': 'application/json',
               'Accept': '*/*',
-              'Accept-Language' : 'en'
+              'Accept-Language' : lang
             },
         });
 

@@ -4,8 +4,9 @@ import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
- 
+
 export class LanguageService {
+    private lang: string = 'en';
 
    //checkLanguage = new BehaviorSubject<string>('en');
 
@@ -22,4 +23,11 @@ export class LanguageService {
     this.subject.next(data);
   }
 
+  getLang(){
+    return this.lang;
+  }
+
+  setLang(lang: string){
+      this.lang = lang
+  }
 }

@@ -1,6 +1,6 @@
- 
 
- 
+
+
 .content{
     width: 100%;
     height: 100vh;
@@ -13,7 +13,7 @@
 }
 
 .content .textBox{
-    padding-left: 7%; 
+    padding-left: 7%;
 }
 
 .content .textBox h3{
@@ -69,7 +69,10 @@
     width: 100%;
     flex-wrap: wrap;
 }
- 
+.arDiraction .searchBox{
+  direction: rtl;
+}
+
 
 .btnSearch{
     background-color: #F77474;
@@ -97,7 +100,7 @@
 }
 
 ::ng-deep .mdc-text-field--filled{
-    background-color: #3651BF !important; 
+    background-color: #3651BF !important;
    border-radius: 10px !important;
 }
 ::ng-deep .mat-mdc-select-value{
@@ -109,7 +112,7 @@
 }
 
 ::ng-deep .mat-form-field-outline {
-    outline-color: #fff; 
+    outline-color: #fff;
 }
 
 .mdc-notched-outline{
@@ -186,7 +189,7 @@
 }
 
 @media screen and (max-width: 600px) {
-     
+
     .textBox{
         padding-top: 60%;
     }
@@ -197,7 +200,7 @@
     }
 
     .content .textBox h1{
-       font-size: 44px; 
+       font-size: 44px;
        margin-bottom: 0.5rem;
     }
 
@@ -214,5 +217,5 @@
         font-size: 11px;
     }
 
-     
+
   }
