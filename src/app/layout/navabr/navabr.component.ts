@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './../../shared/services/language.service';
+import { HomeComponent } from 'src/app/home/home.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navabr',
@@ -8,6 +10,8 @@ import { LanguageService } from './../../shared/services/language.service';
   styleUrls: ['./navabr.component.scss']
 })
 export class NavabrComponent implements OnInit {
+  currentLang ='';
+  langSubscription!: Subscription;
 
   isScrolled = false;
   checkedLang = '';
@@ -27,14 +31,26 @@ scrollEvent() {
     window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
 }
 
-  constructor( private translateService: TranslateService,
-      private _LanguageService:LanguageService){
+  constructor(
+    private translateService: TranslateService,
+    private _LanguageService:LanguageService,
+    private homeComponent:HomeComponent
+    ){
 
   }
 
 
   ngOnInit(): void {
-    this.checkedLang = 'en';
+    this.langSubscription = this._LanguageService.currentLang.subscribe(res => {
+      this.currentLang = res;
+    });
+    //this.checkedLang = 'en';
+  }
+
+  changeLanguage() {
+    const lang = this.currentLang == 'ar' ? 'en' : 'ar'
+    this.currentLang = lang
+    this._LanguageService.langChanged(lang);
   }
 
   switchLanguage() {
@@ -52,6 +68,7 @@ scrollEvent() {
        this.checkedLang = 'ar';
        this._LanguageService.setLang(this.checkedLang);
     }
+    this.homeComponent.getFilterOption('users/getFilterOption');
   }
 
 

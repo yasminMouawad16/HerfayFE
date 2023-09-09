@@ -51,6 +51,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: 'Trap-SemiBold';
     src: url('assets/fonts/Trap-SemiBold.otf');
 }
+@font-face{
+  font-family: 'din-regular';
+  src: url('assets/fonts/Din-Next-Arabic-Regular.otf');
+}
 
 .toast-container{
   position: fixed;
@@ -76,8 +80,39 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
   }
 }
-.arDiraction{
-  .indicator{
-    direction: rtl !important;
+html[dir="rtl"]{
+  body{font-family: 'din-regular' !important;}
+  .indicators-menu{
+    .indicator{
+      flex-direction: row-reverse;
+    }
+  }
+  .content{
+    .indicators{
+      right: unset !important;
+      left: 7%;
+    }
+    .explore{
+      left: unset !important;
+      right: 7%;
+      .explore-content{
+        .crafts{
+          .craft{
+            .details{
+              .type{
+                ul{
+                  li{
+                    &::after{
+                      left: unset !important;
+                      right: -15px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

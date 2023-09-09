@@ -1,6 +1,14 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../shared/services/language.service';
+import { Subscription } from 'rxjs';
+import { ParamsModel } from '../home/home.component';
+import { HttpService } from '../shared/services/http.service';
+import { SerializationUtility } from '../shared/utility/serialization.utility';
+import * as _ from "lodash";
+import { Loader } from '@googlemaps/js-api-loader';
+import { environment } from 'src/environments/environment';
+import { MarkerClusterer } from '@googlemaps/markerclusterer';
 
 @Component({
   selector: 'app-map',
@@ -8,94 +16,188 @@ import { LanguageService } from '../shared/services/language.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent  implements OnInit {
+  langSubscription!: Subscription;
+  filterModel: any = new ParamsModel();
+
+  sourceData:any = [];
+
   filterOptions: any;
-  filterModel: any;
+  resultes: any;
   showList = 'search';
-  checkLang = '';
 
-  lat = 22.4064172;
-  long = 69.0750171;
-  zoom=15;
-
-  markers = [
-        {
-            lat: 21.1594627,
-            lng: 72.6822083,
-            label: 'Surat'
-        },
-        {
-            lat: 23.0204978,
-            lng: 72.4396548,
-            label: 'Ahmedabad'
-        },
-        {
-            lat: 22.2736308,
-            lng: 70.7512555,
-            label: 'Rajkot'
-        }
-    ];
-
+  map!: google.maps.Map ;
+  center!: google.maps.LatLngLiteral;
+  markers = [];
   constructor(
     private activatedRoute: ActivatedRoute,
     private language:LanguageService,
-    private render: Renderer2
+    public http: HttpService,
+    private elementRef: ElementRef
   ) {
   }
   ngOnInit(): void {
-    this.language.registerObserver(this.handleUpdate);
+    this.langSubscription = this.language.currentLang.subscribe(res => {
+      this.onGetData();
+    });
     window.scrollTo(0, 0);
-    // this.onGetColorIndicator();
-    this.onGetData();
-    // const currentLat = this.activatedRoute.snapshot.queryParams.lat;
-    // const currentLng = this.activatedRoute.snapshot.queryParams.lng;
-
-    // this.center = {
-    //   lat: currentLat ? +currentLat : 30.59199913,
-    //   lng: currentLng ? +currentLng : 30.89999749
-    // };
+    this.center = {
+      lat: 30.033333,
+      lng: 31.233334
+    };
 
   }
 
-  handleUpdate(data: any) {
-    this.checkLang =  data;
 
-    const content = document.querySelectorAll('.content');
-
-    if(this.checkLang == 'ar'){
-      content.forEach(content => {
-        content.classList.add('arDiraction');
-        content.classList.remove('enDiraction');
-      });
-    }
-    else if(this.checkLang == 'en'){
-      content.forEach(content => {
-        content.classList.remove('arDiraction');
-        content.classList.add('enDiraction');
-      });
-    }
-
-  }
 
   onGetData() {
-    this.activatedRoute.queryParams.subscribe(res => {
+    this.activatedRoute.queryParams.subscribe((res:any) => {
       this.filterOptions = res;
       if (this.filterOptions?.mainCraft || this.filterOptions?.subCraft || this.filterOptions?.city || this.filterOptions?.heritage) {
-        this.filterModel = this.filterOptions;
-        // this.onFilterOption();
-        // this.onFilter();
+        this.filterModel = {
+          ...this.filterOptions,
+          pageNumber: 1
+        };
+        const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
+        const url = `users/getFilterOption?${queryString}`;
+        this.getFilterOption(url);
+        this.onFilter();
         return;
+      }else{
+        this.getFilterOption('users/getFilterOption');
       }
-      // this.sourceData = res.users;
-      // this.markers = this.sourceData.data.map(item => {
-      //   const data = {
-      //     _id: item._id,
-      //     location: item.geoLocation,
-      //     mainCraft: item.businessInfo.mainCraft,
-      //   }
-      //   return data
-      // })
-      // this.onMapInit()
+      this.sourceData = res.users;
+      this.markers = this.sourceData?.map((item:any) => {
+        const data = {
+          _id: item._id,
+          location: item.geoLocation,
+          mainCraft: item.businessInfo.mainCraft,
+        }
+        return data
+      })
+      this.onMapInit()
     });
+  }
+
+  onFilterOption(){
+    this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
+    const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
+    const url = `users/getFilterOption?${queryString}`;
+    this.getFilterOption(url);
+  }
+
+  getFilterOption(url: any) {
+    this.http.get(url).subscribe((res: any) => {
+      this.resultes = res;
+    });
+  }
+
+
+  nextAndPrev(action? :string){
+    if (action == 'next' && this.filterModel.pageNumber<this.pagesNumber) {
+      this.filterModel.pageNumber = this.filterModel.pageNumber + 1;
+      this.onFilter();
+    }
+    else if(action == 'prev' && this.filterModel.pageNumber>1){
+      this.filterModel.pageNumber = this.filterModel.pageNumber - 1;
+      this.onFilter();
+    }
+  }
+
+  pagesNumber = 1;
+  onFilter() {
+    this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
+    const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
+    const url = `users/getAll?${queryString}`;
+    this.http.get(url).subscribe((res:any) =>{
+      this.sourceData = res.data;
+      this.pagesNumber = res.metaData.total;
+      this.markers = this.sourceData.map((item:any) => {
+        const data = {
+          _id: item._id,
+          location: item.geoLocation,
+          mainCraft: item.businessInfo.mainCraft,
+        }
+        return data
+      })
+      this.onMapInit();
+    });
+  }
+  onResetAll() {
+    this.markers=[];
+    this.filterModel = new ParamsModel();
+    this.getFilterOption('users/getFilterOption');
+  }
+
+  onOpenUserDetails(user:any): void {
+    // this.userDetailsInfo = user;
+    // this.showUserDetails = true;
+    // const mapRefirect = {
+    //   geoLocation: user.geoLocation,
+    //   zoom: 18,
+    // };
+    // this.mapReInit.emit(mapRefirect);
+  }
+
+
+  filterObj: any;
+  filtarationUrl:any;
+  filter(event?:any){
+    if(event){
+      this.filterModel = new ParamsModel();
+      this.filtarationUrl = `users/getFilterOption`;
+    }else{
+      this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
+      const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
+      this.filtarationUrl = `users/getFilterOption?${queryString}`;
+    }
+    this.http.get(this.filtarationUrl).subscribe((res: any) => {
+      this.filterObj = res;
+    });
+  }
+
+
+  onMapInit() {
+    let loader = new Loader({
+      apiKey: environment.googleApiKey
+    });
+    loader
+      .load()
+      .then(() => {
+        const mapElement: HTMLElement = this.elementRef.nativeElement.querySelector('#map') as HTMLElement;
+
+        this.map = new google.maps.Map(mapElement, {
+          center: this.center,
+          zoom: 8,
+          mapTypeControl: false,
+          zoomControl: true,
+          streetViewControl: false,
+          fullscreenControl: false,
+          disableDefaultUI: true,
+          keyboardShortcuts: false,
+
+          draggable: true,
+          disableDoubleClickZoom: true,
+          maxZoom: 20,
+          minZoom: 0,
+         // mapTypeId: environment.mapId
+        });
+        if(this.markers && this.markers.length >0){
+          const markers = this.markers.map((item:any) => {
+            const marker = new google.maps.Marker({
+              position: item.location,
+              icon: `./assets/images/herfs/${item.mainCraft.toLowerCase()}.png`
+            });
+            marker.addListener('click', () => {
+              //this.openDialog(item._id);
+            })
+            return marker;
+          });
+          const map = this.map;
+          new MarkerClusterer({map, markers});
+          debugger
+        }
+
+      })
   }
 
 }

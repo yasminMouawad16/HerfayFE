@@ -22,24 +22,21 @@ import { LanguageService } from './language.service';
 export class AuthInterceptor implements HttpInterceptor {
 
     constructor(
-      private spinner: NgxSpinnerService,
-        private http: HttpService,
         private router: Router,
         public toastr: ToastrService,
-        private loadingService: LoadingService,
-        private _LanguageService:LanguageService
+        private loadingService: LoadingService
     ) { }
 
     intercept(
         request: HttpRequest<any>,
         next: HttpHandler
     ): Observable<HttpEvent<any>> {
-        var lang = this._LanguageService.getLang();
+
         request = request.clone({
             setHeaders: {
               'Content-Type': 'application/json',
               'Accept': '*/*',
-              'Accept-Language' : lang
+              'Accept-Language' : localStorage.getItem('lang') || 'en'
             },
         });
 

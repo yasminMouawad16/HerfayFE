@@ -1,209 +1,176 @@
 <div class="mapouter">
     <div class="gmap_canvas">
-      <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" zoom="10"
-        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-      </iframe>
+      <div class="map-container" id="map" #map></div>
     </div>
     <div class="content">
       <div class="container">
-        <div class="content-flex">
-          <div class="explore">
-            <h2>{{'explore_handcarafts'|translate}}</h2>
-            <div class="tabs">
-              <div>
-                <button [ngClass]="{'active': showList=='search'}" (click)="showList='search'">{{'search' | translate}}</button>
-                <button [ngClass]="{'active': showList=='filter'}" (click)="showList='filter'"><i class="fa-solid fa-sliders"></i></button>
-              </div>
-              <button [ngClass]="{'active': showList=='crafts'}" (click)="showList='crafts'">{{'crafts_people_list' | translate}}</button>
+        <div class="explore">
+          <h2>{{'explore_handcarafts'|translate}}</h2>
+          <div class="tabs">
+            <div>
+              <button [ngClass]="{'active': showList=='search'}" (click)="showList='search';onResetAll()">{{'search' | translate}}</button>
+              <button [ngClass]="{'active': showList=='filter'}" (click)="showList='filter';filter($event)"><i class="fa-solid fa-sliders"></i></button>
             </div>
-            <div class="explore-content">
-              <ng-container *ngIf="showList=='search'">
-                <select>
-                  <option>Select Craft</option>
-                  <option>Craft 1</option>
-                  <option>Craft 2</option>
-                  <option>Craft 3</option>
-                </select>
-                <select>
-                  <option>Select SubCraft</option>
-                  <option>SubCraft 1</option>
-                  <option>SubCraft 2</option>
-                  <option>SubCraft 3</option>
-                </select>
-                <select>
-                  <option>Select Location</option>
-                  <option>Location 1</option>
-                  <option>Location 2</option>
-                  <option>Location 3</option>
-                </select>
-                <select>
-                  <option>Select heritage</option>
-                  <option>heritage 1</option>
-                  <option>heritage 2</option>
-                  <option>heritage 3</option>
-                </select>
-              </ng-container>
-              <ng-container *ngIf="showList=='filter'">
-                <select>
-                  <option>Select Craft</option>
-                  <option>Craft 1</option>
-                  <option>Craft 2</option>
-                  <option>Craft 3</option>
-                </select>
-                <select>
-                  <option>Select SubCraft</option>
-                  <option>SubCraft 1</option>
-                  <option>SubCraft 2</option>
-                  <option>SubCraft 3</option>
-                </select>
-                <select>
-                  <option>Select Location</option>
-                  <option>Location 1</option>
-                  <option>Location 2</option>
-                  <option>Location 3</option>
-                </select>
-                <select>
-                  <option>Select heritage</option>
-                  <option>heritage 1</option>
-                  <option>heritage 2</option>
-                  <option>heritage 3</option>
-                </select>
-                <select>
-                  <option>Select SubCraft</option>
-                  <option>SubCraft 1</option>
-                  <option>SubCraft 2</option>
-                  <option>SubCraft 3</option>
-                </select>
-                <select>
-                  <option>Select Location</option>
-                  <option>Location 1</option>
-                  <option>Location 2</option>
-                  <option>Location 3</option>
-                </select>
-                <select>
-                  <option>Select heritage</option>
-                  <option>heritage 1</option>
-                  <option>heritage 2</option>
-                  <option>heritage 3</option>
-                </select>
-              </ng-container>
-              <ng-container *ngIf="showList=='crafts'">
-                <div class="crafts">
+            <button [ngClass]="{'active': showList=='crafts'}" (click)="showList='crafts'">{{'crafts_people_list' | translate}}</button>
+          </div>
+          <div class="explore-content">
+            <ng-container *ngIf="showList=='search'">
+              <select (change)="onFilterOption()" [(ngModel)]="filterModel.mainCraft">
+                <option [value]="null">Select Craft</option>
+                <option *ngFor="let craft of resultes?.mainCraft" [value]="craft">{{craft}}</option>
+              </select>
+
+              <select (change)="onFilterOption()" [(ngModel)]="filterModel.subCraft">
+                <option [value]="null">Select SubCraft</option>
+                <option *ngFor="let subCraft of resultes?.subCraft" [value]="subCraft">{{subCraft}}</option>
+              </select>
+
+              <select (change)="onFilterOption()" [(ngModel)]="filterModel.governorate">
+                <option [value]="null">Select City</option>
+                <option *ngFor="let city of resultes?.city" [value]="city">{{city}}</option>
+              </select>
+
+              <select (change)="onFilterOption()" [(ngModel)]="filterModel.heritage">
+                <option [value]="null">Select Heritage</option>
+                <option *ngFor="let heritage of resultes?.heritage" [value]="heritage">{{heritage}}</option>
+              </select>
+
+              <div class="actions">
+                <button class="search" (click)="onFilter()">{{'search' | translate}}</button>
+                <button class="clear" (click)="onResetAll()">{{'clear' | translate}}</button>
+              </div>
+
+            </ng-container>
+            <ng-container *ngIf="showList=='filter'">
+              <select (change)="filter()" [(ngModel)]="filterModel.mainCraft">
+                <option [value]="null">Select Craft</option>
+                <option *ngFor="let craft of filterObj?.mainCraft" [value]="craft">{{craft}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.subCraft">
+                <option [value]="null">Select SubCraft</option>
+                <option *ngFor="let subCraft of filterObj?.subCraft" [value]="subCraft">{{subCraft}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.governorate">
+                <option [value]="null">Select City</option>
+                <option *ngFor="let city of filterObj?.city" [value]="city">{{city}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.heritage">
+                <option [value]="null">Select Heritage</option>
+                <option *ngFor="let heritage of filterObj?.heritage" [value]="heritage">{{heritage}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.village">
+                <option [value]="null">Select Neighborhood</option>
+                <option *ngFor="let village of filterObj?.village" [value]="village">{{village}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.employmentSize">
+                <option [value]="null">EmploymentSize</option>
+                <option *ngFor="let size of filterObj?.employmentSize" [value]="size">{{size}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.market">
+                <option [value]="null">Market</option>
+                <option *ngFor="let market of filterObj?.market" [value]="market">{{market}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.type">
+                <option [value]="null">Type</option>
+                <option *ngFor="let type of filterObj?.type" [value]="type">{{type}}</option>
+              </select>
+              <select (change)="filter()" [(ngModel)]="filterModel.rawMaterial">
+                <option [value]="null">Raw Material</option>
+                <option *ngFor="let raw of filterObj?.rawMaterial" [value]="raw">{{raw}}</option>
+              </select>
+              <div class="actions">
+                <button class="search" (click)="onFilter()">{{'search' | translate}}</button>
+                <button class="clear" (click)="filter($event)">{{'clear' | translate}}</button>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="showList=='crafts'">
+              <div class="crafts">
+                <div class="pagination">
                   <h3>Crafts List</h3>
-                  <div class="craft">
-                    <img class="craft-img" alt="craft" src="../../assets/images/image16.png">
-                    <div class="details">
-                      <h5>DM Home Accessories</h5>
-                      <p><i class="fa-solid fa-location-dot"></i> 6Th Of October, Giza</p>
-                      <p><i class="fa-solid fa-people-group"></i> 1-5 Workers</p>
-                      <div class="type">
-                        <ul>
-                          <li>Modern</li>
-                          <li>Wood</li>
-                          <li>Art Pieces</li>
-                        </ul>
-                        <a href="#">
-                          <i class="fa-solid fa-arrow-right"></i>
-                          View Details
-                        </a>
-                      </div>
+                  <!-- <div>
+                    <button (click)="nextAndPrev('prev')"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button (click)="nextAndPrev('next')"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div> -->
+                </div>
+                <div class="craft" *ngFor="let item of sourceData">
+                  <img class="craft-img" [alt]="item.basicInfo.brandName" src="../../assets/images/image16.png">
+                  <div class="details">
+                    <h5>{{item.basicInfo.brandName}}</h5>
+                    <p><i class="fa-solid fa-location-dot"></i>
+                      {{item.basicInfo.address.village || 'Unknown'}}
+                      {{item.basicInfo.address.district || 'Unknown'}}
+                      {{item.basicInfo.address.governorate || 'Unknown'}}
+                    </p>
+                    <p><i class="fa-solid fa-people-group"></i>
+                      {{ item.businessInfo.employmentSize || 'Unknown'}} .
+                      {{item.businessInfo.type || 'Unknown'}}
+                    </p>
+                    <div class="type">
+                      <ul>
+                        <li *ngIf="item.businessInfo.heritage">{{ item.businessInfo.heritage || 'Unknown' }}</li>
+                        <li *ngIf="item.businessInfo.product">{{ item.businessInfo.product || 'Unknown' }}</li>
+                        <li *ngIf="item.businessInfo.rawMaterial">{{ item.businessInfo.rawMaterial || 'Unknown' }}</li>
+                      </ul>
+                      <a href="#" (click)="onOpenUserDetails(item)">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        View Details
+                      </a>
                     </div>
-                  </div>
-                  <div class="craft">
-                    <img class="craft-img" alt="craft" src="../../assets/images/image16.png">
-                    <div class="details">
-                      <h5>DM Home Accessories</h5>
-                      <p><i class="fa-solid fa-location-dot"></i> 6Th Of October, Giza</p>
-                      <p><i class="fa-solid fa-people-group"></i> 1-5 Workers</p>
-                      <div class="type">
-                        <ul>
-                          <li>Modern</li>
-                          <li>Wood</li>
-                          <li>Art Pieces</li>
-                        </ul>
-                        <a href="#">
-                          <i class="fa-solid fa-arrow-right"></i>
-                          View Details
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="craft">
-                    <img class="craft-img" alt="craft" src="../../assets/images/image16.png">
-                    <div class="details">
-                      <h5>DM Home Accessories</h5>
-                      <p><i class="fa-solid fa-location-dot"></i> 6Th Of October, Giza</p>
-                      <p><i class="fa-solid fa-people-group"></i> 1-5 Workers</p>
-                      <div class="type">
-                        <ul>
-                          <li>Modern</li>
-                          <li>Wood</li>
-                          <li>Art Pieces</li>
-                        </ul>
-                        <a href="#">
-                          <i class="fa-solid fa-arrow-right"></i>
-                          View Details
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-container>
-            </div>
-            <div class="actions">
-              <button class="search">{{'search' | translate}}</button>
-              <button class="clear">{{'clear' | translate}}</button>
-            </div>
-          </div>
-          <div class="indicators">
-            <button mat-button  id="menu_Id" [matMenuTriggerFor]="menu">
-              <div class="d-flex align-items-center">
-                <img alt="indicator" src="../../assets/images/woman.png">
-                <span>{{'color_indicators'|translate}}</span>
-              </div>
-              <i class="fa fa-chevron-down"></i>
-            </button>
-            <mat-menu class="indicators-menu" #menu="matMenu">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="indicator">
-                    <img alt="indicator" src="../../assets/images/woman.png">
-                    <span>Lorem Ipsum</span>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="indicator">
-                    <img alt="indicator" src="../../assets/images/woman.png">
-                    <span>Lorem Ipsum</span>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="indicator">
-                    <img alt="indicator" src="../../assets/images/woman.png">
-                    <span>Lorem Ipsum</span>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="indicator">
-                    <img alt="indicator" src="../../assets/images/woman.png">
-                    <span>Lorem Ipsum</span>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="indicator">
-                    <img alt="indicator" src="../../assets/images/woman.png">
-                    <span>Lorem Ipsum</span>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="indicator">
-                    <img alt="indicator" src="../../assets/images/woman.png">
-                    <span>Lorem Ipsum</span>
                   </div>
                 </div>
               </div>
-            </mat-menu>
+            </ng-container>
           </div>
+
+        </div>
+        <div class="indicators">
+          <button mat-button  id="menu_Id" [matMenuTriggerFor]="menu">
+            <div class="d-flex align-items-center">
+              <img alt="indicator" src="../../assets/images/woman.png">
+              <span>{{'color_indicators'|translate}}</span>
+            </div>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+          <mat-menu class="indicators-menu" #menu="matMenu">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/woman.png">
+                  <span>Lorem Ipsum</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/woman.png">
+                  <span>Lorem Ipsum</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/woman.png">
+                  <span>Lorem Ipsum</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/woman.png">
+                  <span>Lorem Ipsum</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/woman.png">
+                  <span>Lorem Ipsum</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/woman.png">
+                  <span>Lorem Ipsum</span>
+                </div>
+              </div>
+            </div>
+          </mat-menu>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
                 <mat-form-field>
                     <mat-label>Select Craft</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.mainCraft">
-                      <mat-option value="moha">All</mat-option>
+                      <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="crafts.length > 0">
                         <mat-option *ngFor="let craft of crafts" [value]="craft">{{craft}}</mat-option>
                       </ng-container>
@@ -27,7 +27,7 @@
                 <mat-form-field>
                     <mat-label>Select Sub Craft</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.subCraft">
-                      <mat-option value="asd">All</mat-option>
+                      <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="subCrafts.length > 0">
                         <mat-option *ngFor="let subCraft of subCrafts" [value]="subCraft">{{subCraft}}</mat-option>
                       </ng-container>
@@ -40,7 +40,7 @@
                     <mat-label>Select Location</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.governorate">
                       <mat-option [value]="null">All</mat-option>
-                      <ng-container *ngIf="crafts.length > 0">
+                      <ng-container *ngIf="cities.length > 0">
                         <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
                       </ng-container>
                     </mat-select>

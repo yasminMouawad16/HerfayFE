@@ -5,6 +5,7 @@ import { HttpService } from '../shared/services/http.service';
 import * as _ from "lodash";
 import {SerializationUtility} from "../shared/utility/serialization.utility";
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 
 
@@ -23,37 +24,27 @@ export class HomeComponent implements OnInit {
 
   disableSelect = new FormControl(false);
   checkLang = '';
+  langSubscription!: Subscription;
 
 
-
-  constructor(private language: LanguageService, public http: HttpService,private router: Router) { }
+  constructor(
+    private language: LanguageService,
+    public http: HttpService,
+    private router: Router,
+    ) { }
 
 
   ngOnInit() {
-    this.language.registerObserver(this.handleUpdate);
-    this.http.get('users/getFilterOption').subscribe((res: any) => {
-      this.crafts = res.mainCraft;
-      this.subCrafts = res.subCraft;
-      this.cities = res.city;
-      this.heritages = res.heritage;
+    this.langSubscription = this.language.currentLang.subscribe(res => {
+      this.http.get('users/getFilterOption').subscribe((res: any) => {
+        this.crafts = res.mainCraft;
+        this.subCrafts = res.subCraft;
+        this.cities = res.city;
+        this.heritages = res.heritage;
+      });
     });
   }
 
-  handleUpdate(data: any) {
-    this.checkLang = data;
-
-    const textBox = document.getElementById('textBox');
-
-    if (this.checkLang == 'ar') {
-      textBox!.style.direction = 'rtl';
-      textBox!.style.paddingRight = '7%';
-    }
-    else if (this.checkLang == 'en') {
-      textBox!.style.direction = 'ltr';
-      textBox!.style.paddingLeft = '7%';
-    }
-
-  }
 
   onFilterOption(){
     this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
@@ -87,7 +78,16 @@ export class HomeComponent implements OnInit {
 }
 export class ParamsModel {
   mainCraft= null;
+  product= null;
   governorate= null;
   heritage= null;
+  search= null;
+  rawMaterial= null;
+  type= null;
+  market= null;
+  employmentSize= null;
   subCraft= null;
+  village= null;
+  pageNumber = 1;
+  perPage = 50;
 }

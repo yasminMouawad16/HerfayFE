@@ -13,7 +13,7 @@
 }
 
 .content .textBox{
-    padding-left: 7%;
+    padding-inline-start: 7%;
 }
 
 .content .textBox h3{
@@ -179,7 +179,7 @@
     position: absolute;
     bottom: 2%;
     right: 0%;
-    width: 105%;
+    width: 100%;
     height: 34%;
     z-index: -1;
     background-image: url('../../assets/images/bottom-bg.png');

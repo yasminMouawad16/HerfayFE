@@ -91,6 +91,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   ],
   providers: [
+    HomeComponent,
     TranslateService,
     HttpService,
     {
