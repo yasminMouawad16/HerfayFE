@@ -80,5 +80,21 @@
   "color_indicators": "Color Indicators",
   "crafts_people_list": "Crafts People List",
   "search": "Search",
-  "clear": "Clear"
+  "clear": "Clear",
+  "back": "back",
+  "craft_details": "Craft Details",
+  "gallery": "Gallery",
+  "get_contact": "Get Contact",
+  "brand_information": "Brand Information",
+  "handicrafterName": "HandiCrafter Name",
+  "structure": "Structure",
+  "market": "Market",
+  "numberOfWorkers": "Number Of Workers",
+  "heritage": "Heritage",
+  "mainCraft": "mainCraft",
+  "subCraft": "subCraft",
+  "product": "Product",
+  "rawMatrial": "Raw Matrial",
+  "contact_info": "Contact Info",
+  "social_media": "Social Media"
 }

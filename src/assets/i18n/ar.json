@@ -80,5 +80,21 @@
   "color_indicators": "مؤشرات اللون",
   "crafts_people_list": "قائمة الحرف الناس",
   "search": "بحث",
-  "clear": "إزالة"
+  "clear": "إزالة",
+  "back": "رجوع",
+  "crafts_details": "تفاصيل الحرفة",
+  "gallery": "صالة عرض",
+  "get_contact": "احصل على جهة اتصال",
+  "brand_information": "معلومات العلامة التجارية",
+  "handicrafterName": "اسم صاحب الحرفة",
+  "structure": "الهيكل",
+  "market": "السوق",
+  "numberOfWorkers": "عدد العمال",
+  "heritage": "إرث",
+  "mainCraft": "الحرفة",
+  "subCraft": "الحرفة الثانوية",
+  "product": "المنتج",
+  "rawMatrial": "مواد خام",
+  "contact_info": "معلومات الاتصال",
+  "social_media": "وسائل التواصل الاجتماعي"
 }

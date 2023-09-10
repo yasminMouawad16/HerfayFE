@@ -24,6 +24,7 @@ export class MapComponent  implements OnInit {
   filterOptions: any;
   resultes: any;
   showList = 'search';
+  crafterDetails: boolean = false;
 
   map!: google.maps.Map ;
   center!: google.maps.LatLngLiteral;
@@ -64,6 +65,7 @@ export class MapComponent  implements OnInit {
         return;
       }else{
         this.getFilterOption('users/getFilterOption');
+        this.onFilter();
       }
       this.sourceData = res.users;
       this.markers = this.sourceData?.map((item:any) => {
@@ -105,22 +107,39 @@ export class MapComponent  implements OnInit {
 
   pagesNumber = 1;
   onFilter() {
-    this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
-    const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
-    const url = `users/getAll?${queryString}`;
-    this.http.get(url).subscribe((res:any) =>{
-      this.sourceData = res.data;
-      this.pagesNumber = res.metaData.total;
-      this.markers = this.sourceData.map((item:any) => {
-        const data = {
-          _id: item._id,
-          location: item.geoLocation,
-          mainCraft: item.businessInfo.mainCraft,
-        }
-        return data
-      })
-      this.onMapInit();
-    });
+    if(this.filterModel.mainCraft || this.filterModel.subCraft || this.filterModel.city || this.filterModel.heritage){
+      this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
+      const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
+      const url = `users/getAll?${queryString}`;
+      this.http.get(url).subscribe((res:any) =>{
+        this.sourceData = res.data;
+        this.pagesNumber = res.metaData.total;
+        this.markers = this.sourceData.map((item:any) => {
+          const data = {
+            _id: item._id,
+            location: item.geoLocation,
+            mainCraft: item.businessInfo.mainCraft,
+          }
+          return data
+        })
+        this.onMapInit();
+      });
+    }else{
+      const url = 'users/getAll';
+      this.http.get(url).subscribe((res:any) =>{
+        this.sourceData = res.data;
+        this.pagesNumber = res.metaData.total;
+        this.markers = this.sourceData.map((item:any) => {
+          const data = {
+            _id: item._id,
+            location: item.geoLocation,
+            mainCraft: item.businessInfo.mainCraft,
+          }
+          return data
+        })
+        this.onMapInit();
+      });
+    }
   }
   onResetAll() {
     this.markers=[];
@@ -128,14 +147,22 @@ export class MapComponent  implements OnInit {
     this.getFilterOption('users/getFilterOption');
   }
 
+  userDetailsInfo: any;
   onOpenUserDetails(user:any): void {
-    // this.userDetailsInfo = user;
-    // this.showUserDetails = true;
-    // const mapRefirect = {
-    //   geoLocation: user.geoLocation,
-    //   zoom: 18,
-    // };
-    // this.mapReInit.emit(mapRefirect);
+    this.crafterDetails = true;
+    this.userDetailsInfo = user;
+    const mapRefirect = {
+      geoLocation: user.geoLocation,
+      zoom: 18,
+    };
+    this.map.setCenter(mapRefirect.geoLocation);
+    this.map.setZoom(mapRefirect.zoom);
+  }
+
+  closeUserDetails(): void {
+    this.crafterDetails = false;
+    this.userDetailsInfo = {};
+    this.onMapInit();
   }
 
 
@@ -194,7 +221,6 @@ export class MapComponent  implements OnInit {
           });
           const map = this.map;
           new MarkerClusterer({map, markers});
-          debugger
         }
 
       })

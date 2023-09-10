@@ -52,7 +52,6 @@ html[dir="rtl"]{
     top: 100px;
     left: 7%;
     background-color: #fff;
-    padding: 30px;
     width: 450px;
     border-radius: 7px;
     box-shadow: 0px 0 10px -5px #000;
@@ -60,10 +59,12 @@ html[dir="rtl"]{
       text-align: center;
       font-weight: 600;
       margin-bottom: 15px;
+      margin-top: 30px;
     }
     .tabs{
       display: flex;
       justify-content: space-between;
+      padding: 0px 15px;
       button{
         color: #000;
         border: 1px solid #f77474;
@@ -71,6 +72,7 @@ html[dir="rtl"]{
         border-radius: 5px;
         padding: 7px 15px;
         font-size: 16px;
+        cursor: pointer;
         &:first-of-type{
           margin-inline-end: 7px;
         }
@@ -81,6 +83,7 @@ html[dir="rtl"]{
       }
     }
     .explore-content{
+      padding: 0px 15px 30px 15px;
       select{
         display: block;
         margin: 20px 0px;
@@ -99,6 +102,15 @@ html[dir="rtl"]{
         margin-top: 30px;
         max-height: 600px;
         overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 2px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #fff;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #0024B6;
+        }
         .pagination{
           display: flex;
           align-items: center;
@@ -118,11 +130,11 @@ html[dir="rtl"]{
             border-bottom: none;
           }
           .craft-img{
-            width: 130px;
+            width: 140px;
           }
           .details{
             padding-inline-start: 15px;
-            width: calc(100% - 130px);
+            width: calc(100% - 140px);
             h5{
               margin-bottom: 5px;
               font-size: 17px;
@@ -201,7 +213,7 @@ html[dir="rtl"]{
     position: absolute;
     right: 7%;
     top: 100px;
-    width: 300px;
+    width: 320px;
     button{
       &#menu_Id{
         width: 100%;
@@ -215,14 +227,132 @@ html[dir="rtl"]{
         align-items: center;
         span{
           font-weight: 600;
-          font-size: 16px;
-          margin: 0 5px;
+          font-size: 18px;
+          margin: 0 7px;
+          display: block;
         }
-        img{
+        .bolts{
           width: 20px;
+          div{
+            div{
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              display: inline-block;
+              margin: 2px;
+              &.yellow{background-color: #E1FF8C;}
+              &.orange{background-color: #F3A8C1;}
+              &.green{background-color: #048869;}
+              &.red{background-color: #CAA044;}
+            }
+          }
+
         }
       }
     }
     // indicators-menu style Inside styles.scss file
+  }
+}
+.crafter-details{
+  padding: 30px 15px;
+  text-align: start;
+  .back{
+    display: flex;
+    align-items: center;
+    color: #0024B6;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    i{
+      margin-inline-end: 10px;
+    }
+  }
+  h3{
+    font-size: 24px;
+    margin: 20px 0;
+    font-weight: 600;
+  }
+  .craft-info{
+    display: flex;
+    .craft-img{
+      width: 150px;
+      object-fit: cover;
+    }
+    .craft-about{
+      width: calc(100% - 150px);
+      padding-inline-start: 7px;
+      h4{
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+      span{
+        color: rgba(69, 69, 69, 0.50);
+        font-size: 12px;
+      }
+      h5{
+        font-weight: 600;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+      .location{
+        margin: 0;
+        color: #454545;
+        font-weight: 100;
+        font-size: 12px;
+        i{font-weight: 600;}
+      }
+      .socials{
+        margin: 7px 0;
+        a{
+          color: #000;
+          margin-inline-end: 15px;
+          &:last-of-type{
+            margin-inline-end: 0px;
+            cursor: pointer;
+          }
+        }
+      }
+      .actions{
+        display: flex;
+        justify-content: space-between;
+        button{
+          background-color: #0024B6;
+          color: #fff;
+          border: 1px solid #0024B6;
+          border-radius: 7px;
+          font-weight: 300;
+          font-size: 14px;
+          padding: 10px 25px;
+          &.gallary{
+            border-color: #F77474;
+            color: #000;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+.brand-info{
+  padding: 15px;
+  text-align: start;
+  background: rgba(0, 36, 182, 0.07);
+  h3{
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 600;
+  }
+  .brand{
+    padding: 10px 0;
+    p{
+      color: #454545;
+      font-size: 16px;
+      margin-bottom: 0px;
+    }
+    span{
+      font-weight: 400;
+      font-size: 11px;
+      opacity: 0.5;
+    }
   }
 }
