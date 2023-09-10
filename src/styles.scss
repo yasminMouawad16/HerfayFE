@@ -3,9 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-
-
 @font-face{
     font-family: 'Trap-Bold';
     src: url('assets/fonts/Trap-Bold.otf');
@@ -90,11 +87,11 @@ html[dir="rtl"]{
   .content{
     .indicators{
       right: unset !important;
-      left: 7%;
+      left: 3%;
     }
     .explore{
       left: unset !important;
-      right: 7%;
+      right: 3%;
       .explore-content{
         .crafts{
           .craft{
@@ -112,6 +109,19 @@ html[dir="rtl"]{
             }
           }
         }
+      }
+    }
+  }
+}
+.gallary{
+  .owl-dots{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    .owl-dot.active{
+      span{
+        background: #00187b;
       }
     }
   }

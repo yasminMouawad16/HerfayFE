@@ -38,6 +38,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
+import { GallaryComponent } from './gallary/gallary.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -61,7 +63,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AboutDrososComponent,
     ContactUsComponent,
     JoinUsComponent,
-    MapComponent
+    MapComponent,
+    GallaryComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     MatProgressSpinnerModule,
     MatMenuModule,
+    MatDialogModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-top-center',

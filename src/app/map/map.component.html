@@ -148,8 +148,8 @@
                     <a [href]="userDetailsInfo?.basicInfo.socialMedia.instagram"><i class="fa-brands fa-linkedin"></i></a>
                   </div>
                   <div class="actions">
-                    <button>{{'get_contact'|translate}}</button>
-                    <button class="gallary">{{'gallery'|translate}}</button>
+                    <a routerLink="/contact-us">{{'get_contact'|translate}}</a>
+                    <button class="gallary" (click)="onShowImagesModal()">{{'gallery'|translate}}</button>
                   </div>
                 </div>
               </div>

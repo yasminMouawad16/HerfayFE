@@ -9,6 +9,8 @@ import * as _ from "lodash";
 import { Loader } from '@googlemaps/js-api-loader';
 import { environment } from 'src/environments/environment';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import { GallaryComponent } from '../gallary/gallary.component';
 
 @Component({
   selector: 'app-map',
@@ -33,7 +35,8 @@ export class MapComponent  implements OnInit {
     private activatedRoute: ActivatedRoute,
     private language:LanguageService,
     public http: HttpService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    public dialog: MatDialog
   ) {
   }
   ngOnInit(): void {
@@ -224,6 +227,13 @@ export class MapComponent  implements OnInit {
         }
 
       })
+  }
+
+  onShowImagesModal() {
+    this.dialog.open(GallaryComponent, {
+      data: this.userDetailsInfo,
+      hasBackdrop: true
+    });
   }
 
 }
