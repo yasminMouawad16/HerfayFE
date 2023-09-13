@@ -79,19 +79,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 html[dir="rtl"]{
   body{font-family: 'din-regular' !important;}
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'din-regular' !important;
+  }
+  .footer{
+    font-family: 'din-regular' !important;
+  }
   .indicators-menu{
     .indicator{
       flex-direction: row-reverse;
     }
   }
   .content{
-    .indicators{
-      right: unset !important;
-      left: 3%;
-    }
     .explore{
-      left: unset !important;
-      right: 3%;
       .explore-content{
         .crafts{
           .craft{
@@ -112,6 +112,13 @@ html[dir="rtl"]{
       }
     }
   }
+  app-spot-light{
+    #contentID{
+      .textBox{
+        background: linear-gradient(-90deg,rgba(0, 0, 0, 0.9) -12.78%, rgba(0, 0, 0, 0.1) 70.69%), url('./assets/images/_DSC82391.png') !important;
+      }
+    }
+  }
 }
 .gallary{
   .owl-dots{
@@ -122,6 +129,21 @@ html[dir="rtl"]{
     .owl-dot.active{
       span{
         background: #00187b;
+      }
+    }
+  }
+}
+.green-slider{
+  .owl-theme{
+    .owl-dots{
+      .owl-dot{
+        span{
+          background: transparent;
+          border: 1px solid #fff;
+        }
+        &.active{
+          span{background-color: #fff;}
+        }
       }
     }
   }

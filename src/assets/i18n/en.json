@@ -96,5 +96,20 @@
   "product": "Product",
   "rawMatrial": "Raw Matrial",
   "contact_info": "Contact Info",
-  "social_media": "Social Media"
+  "social_media": "Social Media",
+  "advanced_search": "Advanced Search",
+  "crafts_list": "Crafts List",
+  "view_details": "View Details",
+  "green_crafts": "Green craftspeople listed in Atlas.",
+  "explore_handicrafts": "Explore handicrafts in Egypt",
+  "specify_craft": "please Specify your Craft",
+  "selet_craft": "Select Craft",
+  "select_subcraft": "Select Sub Craft",
+  "select_location": "Select Location",
+  "select_heritage": "Select heritage",
+  "explore": "Explore",
+  "not_looking_for_specific": "Not looking for anything specific?",
+  "select_neighborhood": "Select Neighborhood",
+  "employmentSize": "EmploymentSize",
+  "type": "Type"
 }

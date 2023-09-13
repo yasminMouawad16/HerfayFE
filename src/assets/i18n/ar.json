@@ -96,5 +96,21 @@
   "product": "المنتج",
   "rawMatrial": "مواد خام",
   "contact_info": "معلومات الاتصال",
-  "social_media": "وسائل التواصل الاجتماعي"
+  "social_media": "وسائل التواصل الاجتماعي",
+  "advanced_search": "البحث المتقدم",
+  "crafts_list": "قائمة الحرف",
+  "view_details": "التفاصيل",
+  "craft_details": "تفاصيل الحرفة",
+  "green_crafts": "الحرفيون الخضر المدرجون في الأطلس.",
+  "explore_handicrafts": "اكتشف الحرف اليدوية في مصر",
+  "specify_craft": "يرجى تحديد الحرف الخاصة بك",
+  "selet_craft": "حدد الحرفة",
+  "select_subcraft": "حدد الحرف الفرعية",
+  "select_location": "اختر موقعا",
+  "select_heritage": "اختر التراث",
+  "explore": "إستكشف",
+  "not_looking_for_specific": "لا تبحث عن شيء محدد؟",
+  "select_neighborhood": "حدد الحي",
+  "employmentSize": "حجم التوظيف",
+  "type": "يكتب"
 }

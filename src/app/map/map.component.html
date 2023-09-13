@@ -10,29 +10,29 @@
             <div class="tabs">
               <div>
                 <button [ngClass]="{'active': showList=='search'}" (click)="showList='search';onResetAll()">{{'search' | translate}}</button>
-                <button [ngClass]="{'active': showList=='filter'}" (click)="showList='filter';filter($event)"><i class="fa-solid fa-sliders"></i></button>
+                <button [ngClass]="{'active': showList=='filter'}" (click)="showList='filter';filter($event)">{{'advanced_search'|translate}}</button>
               </div>
               <button [ngClass]="{'active': showList=='crafts'}" (click)="showList='crafts'">{{'crafts_people_list' | translate}}</button>
             </div>
             <div class="explore-content">
               <ng-container *ngIf="showList=='search'">
                 <select (change)="onFilterOption()" [(ngModel)]="filterModel.mainCraft">
-                  <option [value]="null">Select Craft</option>
+                  <option [value]="null">{{'selet_craft'|translate}}</option>
                   <option *ngFor="let craft of resultes?.mainCraft" [value]="craft">{{craft}}</option>
                 </select>
 
                 <select (change)="onFilterOption()" [(ngModel)]="filterModel.subCraft">
-                  <option [value]="null">Select SubCraft</option>
+                  <option [value]="null">{{'select_subcraft'|translate}}</option>
                   <option *ngFor="let subCraft of resultes?.subCraft" [value]="subCraft">{{subCraft}}</option>
                 </select>
 
                 <select (change)="onFilterOption()" [(ngModel)]="filterModel.governorate">
-                  <option [value]="null">Select City</option>
+                  <option [value]="null">{{'select_location'|translate}}</option>
                   <option *ngFor="let city of resultes?.city" [value]="city">{{city}}</option>
                 </select>
 
                 <select (change)="onFilterOption()" [(ngModel)]="filterModel.heritage">
-                  <option [value]="null">Select Heritage</option>
+                  <option [value]="null">{{'select_heritage'|translate}}</option>
                   <option *ngFor="let heritage of resultes?.heritage" [value]="heritage">{{heritage}}</option>
                 </select>
 
@@ -44,39 +44,39 @@
               </ng-container>
               <ng-container *ngIf="showList=='filter'">
                 <select (change)="filter()" [(ngModel)]="filterModel.mainCraft">
-                  <option [value]="null">Select Craft</option>
+                  <option [value]="null">{{'selet_craft'|translate}}</option>
                   <option *ngFor="let craft of filterObj?.mainCraft" [value]="craft">{{craft}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.subCraft">
-                  <option [value]="null">Select SubCraft</option>
+                  <option [value]="null">{{'select_subcraft'|translate}}</option>
                   <option *ngFor="let subCraft of filterObj?.subCraft" [value]="subCraft">{{subCraft}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.governorate">
-                  <option [value]="null">Select City</option>
+                  <option [value]="null">{{'select_location'|translate}}</option>
                   <option *ngFor="let city of filterObj?.city" [value]="city">{{city}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.heritage">
-                  <option [value]="null">Select Heritage</option>
+                  <option [value]="null">{{'select_heritage'|translate}}</option>
                   <option *ngFor="let heritage of filterObj?.heritage" [value]="heritage">{{heritage}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.village">
-                  <option [value]="null">Select Neighborhood</option>
+                  <option [value]="null">{{'select_neighborhood'|translate}}</option>
                   <option *ngFor="let village of filterObj?.village" [value]="village">{{village}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.employmentSize">
-                  <option [value]="null">EmploymentSize</option>
+                  <option [value]="null">{{'employmentSize'|translate}}</option>
                   <option *ngFor="let size of filterObj?.employmentSize" [value]="size">{{size}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.market">
-                  <option [value]="null">Market</option>
+                  <option [value]="null">{{'market'|translate}}</option>
                   <option *ngFor="let market of filterObj?.market" [value]="market">{{market}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.type">
-                  <option [value]="null">Type</option>
+                  <option [value]="null">{{'type'|translate}}</option>
                   <option *ngFor="let type of filterObj?.type" [value]="type">{{type}}</option>
                 </select>
                 <select (change)="filter()" [(ngModel)]="filterModel.rawMaterial">
-                  <option [value]="null">Raw Material</option>
+                  <option [value]="null">{{'rawMatrial'|translate}}</option>
                   <option *ngFor="let raw of filterObj?.rawMaterial" [value]="raw">{{raw}}</option>
                 </select>
                 <div class="actions">
@@ -87,7 +87,7 @@
               <ng-container *ngIf="showList=='crafts'">
                 <div class="crafts">
                   <div class="pagination">
-                    <h3>Crafts List</h3>
+                    <h3>{{'crafts_list'|translate}}</h3>
                     <!-- <div>
                       <button (click)="nextAndPrev('prev')"><i class="fa-solid fa-chevron-left"></i></button>
                       <button (click)="nextAndPrev('next')"><i class="fa-solid fa-chevron-right"></i></button>
@@ -114,7 +114,7 @@
                         </ul>
                         <a (click)="onOpenUserDetails(item)">
                           <i class="fa-solid fa-arrow-right"></i>
-                          View Details
+                          {{'view_details'|translate}}
                         </a>
                       </div>
                     </div>

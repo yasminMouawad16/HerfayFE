@@ -52,7 +52,7 @@ html[dir="rtl"]{
     top: 100px;
     left: 3%;
     background-color: #fff;
-    width: 450px;
+    width: 400px;
     border-radius: 7px;
     box-shadow: 0px 0 10px -5px #000;
     h2{
@@ -70,8 +70,8 @@ html[dir="rtl"]{
         border: 1px solid #f77474;
         background-color: transparent;
         border-radius: 5px;
-        padding: 7px 15px;
-        font-size: 16px;
+        padding: 7px;
+        font-size: 14px;
         cursor: pointer;
         &:first-of-type{
           margin-inline-end: 7px;
@@ -102,6 +102,7 @@ html[dir="rtl"]{
         margin-top: 30px;
         max-height: 600px;
         overflow-y: scroll;
+        max-width: 370px;
         &::-webkit-scrollbar {
           width: 2px;
         }
@@ -133,7 +134,7 @@ html[dir="rtl"]{
             width: 140px;
           }
           .details{
-            padding-inline-start: 15px;
+            padding-inline-start: 7px;
             width: calc(100% - 140px);
             h5{
               margin-bottom: 5px;
@@ -141,8 +142,9 @@ html[dir="rtl"]{
               font-weight: 600;
             }
             p{
-              margin-bottom: 5px;
-              i{margin-inline-end: 7px;}
+              margin-bottom: 2px;
+              font-size: 13px;
+              i{margin-inline-end: 2px;}
             }
             .type{
               display: flex;
@@ -150,10 +152,12 @@ html[dir="rtl"]{
               justify-content: space-between;
               ul{
                 margin-bottom: 0px;
-                padding: 0 15px;
+                padding: 0;
                 list-style-type: none;
+                padding-inline-start: 10px;
                 li{
                   position: relative;
+                  font-size: 13px;
                   &::after{
                     content: '';
                     position: absolute;
@@ -161,7 +165,7 @@ html[dir="rtl"]{
                     height: 7px;
                     border-radius: 50%;
                     top: 50%;
-                    left: -15px;
+                    left: -10px;
                     transform: translateY(-50%);
                     background-color: #f3a8c1;
                   }
@@ -181,6 +185,9 @@ html[dir="rtl"]{
                 color: #0024b6;
                 cursor: pointer;
                 text-decoration: none;
+                font-size: 13px;
+                min-width: 90px;
+                text-align: end;
               }
             }
           }
@@ -322,8 +329,8 @@ html[dir="rtl"]{
           border: 1px solid #0024B6;
           border-radius: 7px;
           font-weight: 300;
-          font-size: 14px;
-          padding: 10px 25px;
+          font-size: 12px;
+          padding: 10px;
           text-decoration: none;
           &.gallary{
             border-color: #F77474;

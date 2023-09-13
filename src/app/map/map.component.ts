@@ -45,8 +45,8 @@ export class MapComponent  implements OnInit {
     });
     window.scrollTo(0, 0);
     this.center = {
-      lat: 30.033333,
-      lng: 31.233334
+      lat: 29.666666,
+      lng: 30.5
     };
 
   }

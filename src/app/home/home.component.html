@@ -6,13 +6,13 @@
   </div>
 
     <div class="searchBox">
-         <h3>Explore handicrafts in Egypt</h3>
-         <h6>please Specify your Craft</h6>
+         <h3>{{'explore_handicrafts'|translate}}</h3>
+         <h6>{{'specify_craft'|translate}}</h6>
 
          <div class="box">
              <div class="boxItem">
                 <mat-form-field>
-                    <mat-label>Select Craft</mat-label>
+                    <mat-label>{{'selet_craft'|translate}}</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.mainCraft">
                       <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="crafts.length > 0">
@@ -25,7 +25,7 @@
 
              <div class="boxItem">
                 <mat-form-field>
-                    <mat-label>Select Sub Craft</mat-label>
+                    <mat-label>{{'select_subcraft'|translate}}</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.subCraft">
                       <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="subCrafts.length > 0">
@@ -37,7 +37,7 @@
 
              <div class="boxItem">
                 <mat-form-field>
-                    <mat-label>Select Location</mat-label>
+                    <mat-label>{{'select_location'|translate}}</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.governorate">
                       <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="cities.length > 0">
@@ -49,7 +49,7 @@
 
              <div class="boxItem">
                 <mat-form-field>
-                    <mat-label>Select heritage</mat-label>
+                    <mat-label>{{'select_heritage'|translate}}</mat-label>
                     <mat-select (selectionChange)="onFilterOption()" [(ngModel)]="filterModel.heritage">
                       <mat-option [value]="null">All</mat-option>
                       <ng-container *ngIf="heritages.length > 0">
@@ -60,13 +60,13 @@
              </div>
 
              <div>
-                <button class="btnSearch" (click)="search()">Search</button>
+                <button class="btnSearch" (click)="search()">{{'search'|translate}}</button>
              </div>
          </div>
 
          <hr>
 
-         <h5>Not looking for anything specific? <a routerLink="/map">Explore</a></h5>
+         <h5>{{'not_looking_for_specific'|translate}} <a routerLink="/map">{{'explore'|translate}}</a></h5>
     </div>
 </div>
 
