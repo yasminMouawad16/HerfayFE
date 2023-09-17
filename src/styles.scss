@@ -66,14 +66,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .indicator{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 5px 0;
     cursor: pointer;
     img{
       width: 25px;
     }
     span{
-      font-size: 15px;
+      font-size: 13px;
+      margin-inline-start: 5px;
+      line-height: 14px;
     }
   }
 }
@@ -82,17 +83,31 @@ html[dir="rtl"]{
   h1,h2,h3,h4,h5,h6{
     font-family: 'din-regular' !important;
   }
+  .dropdown-menu{
+    text-align: start;
+  }
   .footer{
     font-family: 'din-regular' !important;
+  }
+  .mat-typography{
+    font-family: 'din-Regular' !important;
   }
   .indicators-menu{
     .indicator{
       flex-direction: row-reverse;
+      span{
+        margin-inline-start: 0px;
+        margin-inline-end: 5px;
+        text-align: end;
+      }
     }
   }
   .content{
     .explore{
       .explore-content{
+        select{
+          background-position: left 1rem center !important;
+        }
         .crafts{
           .craft{
             .details{
@@ -112,6 +127,10 @@ html[dir="rtl"]{
       }
     }
   }
+  .crafter-details .craft-info .craft-about .actions button, .crafter-details .craft-info .craft-about .actions a{
+    font-size: 13px !important;
+    padding: 10px !important;
+  }
   app-spot-light{
     #contentID{
       .textBox{
@@ -119,6 +138,7 @@ html[dir="rtl"]{
       }
     }
   }
+
 }
 .gallary{
   .owl-dots{
@@ -148,3 +168,26 @@ html[dir="rtl"]{
     }
   }
 }
+.mat-typography{
+  font-family: 'Trap-Regular' !important;
+}
+.searchBox .mdc-text-field--filled{
+  background-color: transparent !important;
+  border: 1px solid #fff;
+}
+.searchBox .mdc-text-field--filled .mdc-floating-label{color: #fff;}
+.searchBox .mat-mdc-select-arrow{color: #fff;}
+.greenBox .owl-stage{
+  height: 100%;
+}
+.greenBox .owl-stage .owl-item{height: 100%;}
+app-about-drosos{
+  .content{overflow: hidden;}
+  owl-carousel-o{
+    direction: initial;
+  }
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+  background: #0024b6;
+}
+.searchBox .mat-mdc-form-field{max-width: 195px;}

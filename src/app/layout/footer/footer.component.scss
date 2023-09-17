@@ -8,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start; 
+    align-items: flex-start;
     font-family: 'Trap-Regular';
 }
 
@@ -19,7 +19,7 @@
 
 .footer .itemBox p{
     margin-left: 0;
-    text-align: left;
+    text-align: start;
 }
 
 
@@ -33,12 +33,12 @@
 }
 
 .itemBox img{
-   width: 40%;
+   width: 50%;
    margin-bottom: 8px;
 }
 
 .itemBox p{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 300;
 }
 .footer .itemBox ul{
@@ -46,10 +46,10 @@
 }
 
 .itemBox ul li{
-    margin-bottom: 7px;
+    margin-bottom: 15px;
 }
-.itemBox ul li a{ 
-    font-size: 11px;
+.itemBox ul li a{
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -78,7 +78,7 @@
 }
 
 .itemBox .icons{
-    display: flex; 
+    display: flex;
 }
 
 .icons a{
@@ -92,7 +92,7 @@
 
 .icons a:hover{
     border: 2px solid #fff;
-    
+
 }
 
 .footer hr{

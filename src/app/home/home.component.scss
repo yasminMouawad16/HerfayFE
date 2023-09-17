@@ -57,7 +57,7 @@
 }
 
 .searchBox h6{
-    font-size: 10px;
+    font-size: 13px;
     color: #d7d3d3;
     font-weight: 300;
 }
@@ -67,7 +67,7 @@
     align-items: start;
     justify-content: space-between;
     width: 100%;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 }
 .arDiraction .searchBox{
   direction: rtl;
@@ -121,6 +121,7 @@
 
   .searchBox h5{
     color: #cdcaca;
+    font-size: 13px;
     margin-bottom: 0px;
   }
 
@@ -128,7 +129,7 @@
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 16px;
     text-decoration: underline;
   }
 
@@ -187,7 +188,16 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+@media(max-width: 1024px){
+  .searchBox{
+    .box{
+      display: block;
+      .boxItem{
+        display: inline-block;
+      }
+    }
+  }
+}
 @media screen and (max-width: 600px) {
 
     .textBox{

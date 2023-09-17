@@ -1,36 +1,36 @@
 .content{
-    padding: 5rem 7%;
+    padding: 0rem 7%;
     text-align: center;
     font-family: 'Trap-Medium';
  }
- 
+
  .content h3{
      font-size: 30px;
      font-weight: bold;
      font-family: 'Trap-Bold';
  }
- 
+
  .content p{
      color: #707070;
      margin-bottom: 26px;
      font-family: 'Trap-Medium';
  }
- 
+
  .content .imgBox {
      position: relative;
  }
- 
- .content .imgBox img{ 
+
+ .content .imgBox img{
      width: 95%;
      border-radius: 15px;
-     
+
  }
- 
+
  .imgBox button{
     border: none;
     background-color: transparent;
  }
- 
+
  .imgBox .btnShow{
      position: absolute;
      top: 20px;
@@ -42,7 +42,7 @@
      border-radius: 8px;
      text-align: center;
  }
- 
+
  .imgBox .btnVideo{
      position: absolute;
      top: 43%;
@@ -54,13 +54,13 @@
      border-radius: 8px;
      text-align: center;
  }
- 
+
 
  .details{
     width: 80%;
     margin: 3rem auto;
  }
- 
+
 
  @media screen and (max-width: 600px) {
 

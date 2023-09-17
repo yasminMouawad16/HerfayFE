@@ -4,7 +4,26 @@
     </div>
     <div class="content">
       <div class="container">
-        <div class="explore">
+        <div class="mobile-btns">
+          <button class="indicators-btn" (click)="showMobileIndicators = !showMobileIndicators">
+            <div class="d-flex align-items-center">
+              <div class="bolts">
+                <div class="d-flex">
+                  <div class="yellow"></div>
+                  <div class="orange"></div>
+                </div>
+                <div class="d-flex">
+                  <div class="green"></div>
+                  <div class="red"></div>
+                </div>
+              </div>
+            </div>
+          </button>
+          <button class="explore-btn" (click)="showMobileExplore = !showMobileExplore">
+            <i [ngClass]="{'fa-x': showMobileExplore}" class="fa-solid fa-search"></i>
+          </button>
+        </div>
+        <div [ngClass]="{'hide': !showMobileExplore}" class="explore">
           <ng-container *ngIf="!crafterDetails">
             <h2>{{'explore_handcarafts'|translate}}</h2>
             <div class="tabs">
@@ -85,14 +104,14 @@
                 </div>
               </ng-container>
               <ng-container *ngIf="showList=='crafts'">
+                <div class="pagination">
+                  <h3>{{'crafts_list'|translate}}</h3>
+                  <!-- <div>
+                    <button (click)="nextAndPrev('prev')"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button (click)="nextAndPrev('next')"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div> -->
+                </div>
                 <div class="crafts">
-                  <div class="pagination">
-                    <h3>{{'crafts_list'|translate}}</h3>
-                    <!-- <div>
-                      <button (click)="nextAndPrev('prev')"><i class="fa-solid fa-chevron-left"></i></button>
-                      <button (click)="nextAndPrev('next')"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div> -->
-                  </div>
                   <div class="craft" *ngFor="let item of sourceData">
                     <img class="craft-img" [alt]="item.basicInfo.brandName" src="../../assets/images/crafter-img.png">
                     <div class="details">
@@ -217,7 +236,7 @@
 
 
         </div>
-        <div class="indicators">
+        <div [ngClass]="{'hide': !showMobileIndicators}" class="indicators">
           <button mat-button  id="menu_Id" [matMenuTriggerFor]="menu">
             <div class="d-flex align-items-center">
               <div class="bolts">
@@ -229,8 +248,6 @@
                   <div class="green"></div>
                 <div class="red"></div>
                 </div>
-
-
               </div>
               <span>{{'color_indicators'|translate}}</span>
             </div>
@@ -240,98 +257,146 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-01.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/weaving and Knitting.png">
+                  <span>{{'weaving_knitting'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-02.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/leather-industries.png">
+                  <span>{{'leather_industries'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-03.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/embroidery.png">
+                  <span>{{'embroidery'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-04.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/wooden-Crafts.png">
+                  <span>{{'wooden_crafts'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-05.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/formation of natural raw materials.png">
+                  <span>{{'formation_materials'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-06.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/mosaic.png">
+                  <span>{{'mosaic'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-07.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/jarid-crafts.png">
+                  <span>{{'jarid_crafts'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-08.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/handmade-Kilim-and-Carpets.png">
+                  <span>{{'handmade_carpets'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-09.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/soap-production.png">
+                  <span>{{'soap_production'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-10.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/paper-Crafts.png">
+                  <span>{{'paper_crafts'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-11.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/pottery.png">
+                  <span>{{'pottery'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-12.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/candle-making.png">
+                  <span>{{'candle_making'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-13.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/vegetable-fiber.png">
+                  <span>{{'vegetable_fiber'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-14.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/marble-and-ceramic.png">
+                  <span>{{'marble_ceramic'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-15.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/bead-making.png">
+                  <span>{{'bead_making'|translate}}</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="indicator">
-                  <img alt="indicator" src="../../assets/images/pins/Atlas_s icon new pins-16.png">
-                  <span>Lorem Ipsum</span>
+                  <img alt="indicator" src="../../assets/images/herf/arts.png">
+                  <span>{{'arts'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/musical-instruments.png">
+                  <span>{{'musical_instruments'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/mat-industry.png">
+                  <span>{{'mat_industry'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/bamboo-letter.png">
+                  <span>{{'bamboo_letter'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/glass-Crafts.png">
+                  <span>{{'glass_crafts'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/copper-and-Metal-Craft.png">
+                  <span>{{'copper_metal_craft'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/crochet-Macrame-and-knots.png">
+                  <span>{{'crochet_macrame_knots'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/jewelery-and-Accessories.png">
+                  <span>{{'jewelery_accessories'|translate}}</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="indicator">
+                  <img alt="indicator" src="../../assets/images/herf/palm-Crafts.png">
+                  <span>{{'palm_crafts'|translate}}</span>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit{
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 100,
     navText: ['', '',''],
 
@@ -32,7 +32,8 @@ export class AboutComponent implements OnInit{
           items: 4
         }
       },
-    nav: true
+    nav: false,
+    rtl: localStorage.getItem('lang') == 'ar' ? true : false
   }
 
   imagesCrafts :any[] = [
@@ -46,7 +47,7 @@ export class AboutComponent implements OnInit{
 
 
   checkLang = '';
-  
+
 
   constructor(private language:LanguageService){}
 
@@ -55,24 +56,24 @@ ngOnInit() {
   this.language.registerObserver(this.handleUpdate);
 }
 
-handleUpdate(data: any) { 
+handleUpdate(data: any) {
   this.checkLang =  data;
-  
+
   const content = document.querySelectorAll('.content');
 
   if(this.checkLang == 'ar'){
     content.forEach(content => {
-      content.classList.add('arDiraction'); 
+      content.classList.add('arDiraction');
       content.classList.remove('enDiraction');
     });
   }
   else if(this.checkLang == 'en'){
     content.forEach(content => {
       content.classList.remove('arDiraction');
-      content.classList.add('enDiraction'); 
+      content.classList.add('enDiraction');
     });
   }
- 
+
 }
 
 }

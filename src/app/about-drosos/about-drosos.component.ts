@@ -14,7 +14,7 @@ export class AboutDrososComponent implements OnInit{
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 100,
     navText: ['', '',''],
     responsive: {
@@ -31,7 +31,8 @@ export class AboutDrososComponent implements OnInit{
         items: 4
       }
     },
-    nav: true
+    nav: false,
+    rtl: localStorage.getItem('lang') == 'ar' ? true : false
   }
 
 
@@ -40,7 +41,7 @@ export class AboutDrososComponent implements OnInit{
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 100,
     navText: ['', '',''],
     responsive: {
@@ -57,7 +58,8 @@ export class AboutDrososComponent implements OnInit{
         items: 9
       }
     },
-    nav: true
+    nav: false,
+    rtl: localStorage.getItem('lang') == 'ar' ? true : false
   }
 
   imagesCrafts :any[] = [
@@ -76,14 +78,14 @@ export class AboutDrososComponent implements OnInit{
     {id:4, img:'assets/images/Mask group (2).png'},
     {id:5, img:'assets/images/Mask group.svg'},
     {id:6, img:'assets/images/logo-1 2.svg'},
-    {id:7, img:'assets/images/logo 4.svg'}, 
-    {id:8, img:'assets/images/1661441682logo 3.png'}, 
+    {id:7, img:'assets/images/logo 4.svg'},
+    {id:8, img:'assets/images/1661441682logo 3.png'},
   ];
 
 
-  
+
   checkLang = '';
-  
+
 
   constructor(private language:LanguageService){}
 
@@ -92,23 +94,23 @@ ngOnInit() {
   this.language.registerObserver(this.handleUpdate);
 }
 
-handleUpdate(data: any) { 
+handleUpdate(data: any) {
   this.checkLang =  data;
-  
+
   const content = document.querySelectorAll('.content');
 
   if(this.checkLang == 'ar'){
     content.forEach(content => {
-      content.classList.add('arDiraction'); 
+      content.classList.add('arDiraction');
       content.classList.remove('enDiraction');
     });
   }
   else if(this.checkLang == 'en'){
     content.forEach(content => {
       content.classList.remove('arDiraction');
-      content.classList.add('enDiraction'); 
+      content.classList.add('enDiraction');
     });
   }
- 
+
 }
 }

@@ -70,8 +70,8 @@ html[dir="rtl"]{
         border: 1px solid #f77474;
         background-color: transparent;
         border-radius: 5px;
-        padding: 7px;
-        font-size: 14px;
+        padding: 7px 10px;
+        font-size: 13px;
         cursor: pointer;
         &:first-of-type{
           margin-inline-end: 7px;
@@ -92,17 +92,35 @@ html[dir="rtl"]{
         border: 1px solid #000;
         background-color: transparent;
         width: 100%;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1.3em;
         &:focus-visible{
           box-shadow: none;
           outline: none;
         }
       }
+      .pagination{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+        h3{margin-bottom: 0px;}
+        button{
+          &:first-of-type{margin-inline-end: 7px;}
+          background-color: transparent;
+          border: none;
+        }
+      }
       .crafts{
         text-align: start;
-        margin-top: 30px;
-        max-height: 600px;
+        margin-top: 0px;
+        max-height: 430px;
         overflow-y: scroll;
         max-width: 370px;
+        overflow-x: hidden;
         &::-webkit-scrollbar {
           width: 2px;
         }
@@ -111,17 +129,6 @@ html[dir="rtl"]{
         }
         &::-webkit-scrollbar-thumb {
           background: #0024B6;
-        }
-        .pagination{
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          h3{margin-bottom: 0px;}
-          button{
-            &:first-of-type{margin-inline-end: 7px;}
-            background-color: transparent;
-            border: none;
-          }
         }
         .craft{
           display: flex;
@@ -261,7 +268,7 @@ html[dir="rtl"]{
   }
 }
 .crafter-details{
-  padding: 30px 15px;
+  padding: 15px;
   text-align: start;
   .back{
     display: flex;
@@ -276,7 +283,7 @@ html[dir="rtl"]{
   }
   h3{
     font-size: 24px;
-    margin: 20px 0;
+    margin: 10px 0;
     font-weight: 600;
   }
   .craft-info{
@@ -329,8 +336,8 @@ html[dir="rtl"]{
           border: 1px solid #0024B6;
           border-radius: 7px;
           font-weight: 300;
-          font-size: 12px;
-          padding: 10px;
+          font-size: 14px;
+          padding: 10px 15px;
           text-decoration: none;
           &.gallary{
             border-color: #F77474;
@@ -343,7 +350,7 @@ html[dir="rtl"]{
   }
 }
 .brand-info{
-  padding: 15px;
+  padding: 5px 15px;
   text-align: start;
   background: rgba(0, 36, 182, 0.07);
   h3{
@@ -352,7 +359,7 @@ html[dir="rtl"]{
     font-weight: 600;
   }
   .brand{
-    padding: 10px 0;
+    padding: 5px 0;
     p{
       color: #454545;
       font-size: 16px;
@@ -363,5 +370,68 @@ html[dir="rtl"]{
       font-size: 11px;
       opacity: 0.5;
     }
+  }
+}
+.mobile-btns{
+  display: none;
+}
+.hide{display: block;}
+@media(max-width: 992px){
+  .hide{display: none !important;}
+  .mobile-btns{
+    display: block;
+    .indicators-btn{
+      position: fixed;
+      left: 0;
+      top: 70px;
+      width: 50px;
+      height: 59px;
+      background-color: #fff;
+      border: none;
+      .bolts{
+        width: 30px;
+        div{
+          div{
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 2px;
+            &.yellow{background-color: #E1FF8C;}
+            &.orange{background-color: #F3A8C1;}
+            &.green{background-color: #048869;}
+            &.red{background-color: #CAA044;}
+          }
+        }
+      }
+    }
+  }
+  .explore-btn{
+    position: fixed;
+    left: 0;
+    top: 140px;
+    width: 50px;
+    height: 59px;
+    background-color: #fff;
+    border: none;
+    z-index: 99999;
+  }
+}
+@media(max-width: 768px){
+  .content .indicators{
+    right: 0%;
+    width: calc(100% - 50px);
+    top: 70px;
+    box-shadow: none;
+    #menu_Id{
+      .bolts{
+        display: none;
+      }
+    }
+  }
+  .content .explore{
+    top: 140px;
+    width: 100%;
+    left: 0%;
   }
 }

@@ -7,9 +7,6 @@
 .content .greenBox{
     width: 35%;
     background-color: #048869;
-    color: #fff;
-    text-align: center;
-    padding: 3rem 2rem;
 }
 .green-slider{
   width: 100%;
@@ -21,39 +18,66 @@
   }
   .slide{
     .img-container{
-      width: 140px;
+      max-width: 140px;
       height: 155px;
       background-color: #fff;
       border-radius: 15px;
-      margin: 15px 0;
+      margin: 15px auto;
       display: flex;
       align-items: center;
       justify-content: center;
       img{
-        width: 90px;
-        height: 90px;
+        max-width: 90px;
+        max-height: 90px;
+        margin: auto;
       }
     }
   }
 }
 
-.greenBox h2{
-    font-weight: bold;
-    font-size: 6rem;
-    margin-bottom: 22px;
-    font-family: 'Trap-Bold';
+.green-slider .slide{
+  text-align: center;
+  padding: 0;
+  padding-top: 10%;
+  color: #fff;
 }
 
+.green-content{
+  text-align: center;
+  padding: 3rem 0;
+  padding-top: 30%;
+  color: #fff;
+  height: 100%;
+}
+.greenBox .green-content h2{
+  font-weight: bold;
+  font-size: 6rem;
+  margin-bottom: 22px;
+  font-family: 'Trap-Bold';
+}
+
+.greenBox .green-content h3{
+  text-align: left;
+    margin-left: 28%;
+    font-size: 30px;
+    line-height: 80px;
+    font-weight: 100;
+}
+
+.greenBox .slide h3{
+  font-size: 21px;
+}
 
 .greenBox h4{
-    text-align: left;
     margin-left: 36% !important;
-    font-size: 19px !important;
+    font-size: 30px !important;
     margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
 }
 
 .greenBox h4 img{
-    width: 18px;
+    width: 18px !important;
     margin-left: 2px;
 }
 
@@ -102,7 +126,6 @@
 .enDiraction{
     direction: ltr;
 }
-
 
 @media screen and (max-width: 600px) {
 

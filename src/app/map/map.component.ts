@@ -31,6 +31,9 @@ export class MapComponent  implements OnInit {
   map!: google.maps.Map ;
   center!: google.maps.LatLngLiteral;
   markers = [];
+
+  showMobileExplore: boolean = false;
+  showMobileIndicators: boolean = false;
   constructor(
     private activatedRoute: ActivatedRoute,
     private language:LanguageService,
@@ -215,7 +218,7 @@ export class MapComponent  implements OnInit {
           const markers = this.markers.map((item:any) => {
             const marker = new google.maps.Marker({
               position: item.location,
-              icon: `./assets/images/herfs/${item.mainCraft.toLowerCase()}.png`
+              icon: `./assets/images/--herfs/${item.mainCraft.toLowerCase()}.png`
             });
             marker.addListener('click', () => {
               //this.openDialog(item._id);

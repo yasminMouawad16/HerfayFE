@@ -21,7 +21,7 @@
     font-weight: bold;
     font-family: 'Trap-Bold';
 }
- 
+
 
 .platform{
     width: 90%;
@@ -113,7 +113,7 @@ background-repeat: no-repeat;
     margin: 5rem 0;
     font-family: 'Trap-Medium';
 }
- 
+
 .details h3{
     font-size: 30px;
     font-weight: bold;
@@ -129,7 +129,7 @@ background-repeat: no-repeat;
 
 
 .details .slidersImg img{
-    width: 40% !important; 
+    width: 40% !important;
 }
 
 
@@ -173,29 +173,9 @@ background-repeat: no-repeat;
 }
 
 
-.arDiraction{
-    direction: rtl;
-}
-
-.arDiraction .platform .slidImg{
-    direction: ltr;
-}
-
-.arDiraction .details .slidersImg{
-    direction: ltr;
-}
-
-.arDiraction .moreData .textItem{
-    text-align: right;
-}
-
-.enDiraction{
-    direction: ltr;
-}
-
 
 @media screen and (max-width: 600px) {
- 
+
     .content .about-atlas{
         padding: 40% 6%;
         height: 288px;
@@ -249,7 +229,7 @@ background-repeat: no-repeat;
        order: 2;
         width: 98%;
     }
-    
+
     .moreData .textItem{
         width: 98%;
     }
