@@ -44,6 +44,7 @@ export class MapComponent  implements OnInit {
   }
   ngOnInit(): void {
     this.langSubscription = this.language.currentLang.subscribe(res => {
+      debugger
       this.onGetData();
     });
     window.scrollTo(0, 0);
@@ -221,7 +222,12 @@ export class MapComponent  implements OnInit {
               icon: `./assets/images/--herfs/${item.mainCraft.toLowerCase()}.png`
             });
             marker.addListener('click', () => {
-              //this.openDialog(item._id);
+              const user = this.sourceData.filter((user:any) => {
+                return user._id == item._id;
+              })
+              this.showMobileExplore =true;
+              this.showList='crafts';
+              this.onOpenUserDetails(user[0]);
             })
             return marker;
           });
