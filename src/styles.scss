@@ -92,6 +92,13 @@ html[dir="rtl"]{
   .mat-typography{
     font-family: 'din-Regular' !important;
   }
+  app-navabr{
+    #navbarSupportedContent{
+      .nav-link{
+        font-family: 'din-Regular' !important;
+      }
+    }
+  }
   .indicators-menu{
     .indicator{
       flex-direction: row-reverse;

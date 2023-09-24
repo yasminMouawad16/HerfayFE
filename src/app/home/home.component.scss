@@ -6,8 +6,10 @@
     height: 100vh;
     padding-top: 17%;
     color: #fff;
-    background-image: url('../../assets/images/Group 4058.png');
     background-repeat: no-repeat;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%),url('../../assets/images/Group 4058.png');
+    background-blend-mode: soft-light;
     background-size: cover;
     background-position: center center;
 }

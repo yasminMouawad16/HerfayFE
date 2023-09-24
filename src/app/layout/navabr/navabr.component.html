@@ -1,8 +1,9 @@
 
   <nav class="navbar navbar-expand-lg" [ngClass]="isScrolled ? 'navbar-inverse' : 'navbar-default'">
     <div class="container-fluid">
-      <a class="navbar-brand" [ngClass]="{'navItem-inverse': isScrolled}">
-        <div *ngIf="isScrolled"><img src="assets/images/fav.png"> ATLAS HERAFY</div>
+      <a class="navbar-brand" [ngClass]="{'navItem-inverse': isScrolled}" routerLink="/home">
+        <!-- <div *ngIf="isScrolled"><img src="assets/images/fav.png"> ATLAS HERAFY</div> -->
+        <img *ngIf="isScrolled" src="assets/images/logo-black.svg" class="w-100">
         <img *ngIf="!isScrolled" src="assets/images/Logo-f2 .png" class="w-100">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

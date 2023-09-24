@@ -135,5 +135,8 @@
   "copper_metal_craft": "Copper and Metal Craft",
   "crochet_macrame_knots": "Crochet, Macrame and knots",
   "jewelery_accessories": "Jewelery and Accessories",
-  "palm_crafts": "Palm Crafts"
+  "palm_crafts": "Palm Crafts",
+  "export": "Export",
+  "local": "Local",
+  "localAndexport": "Local and Export"
 }

@@ -75,7 +75,7 @@ export class AboutDrososComponent implements OnInit{
     {id:1, img:'assets/images/1661441682logo 3.png'},
     {id:2, img:'assets/images/Mask group (1).png'},
     {id:3, img:'assets/images/0626202204483762b7e5254b3be.svg'},
-    {id:4, img:'assets/images/Mask group (2).png'},
+    {id:4, img:'assets/images/removebg.png'},
     {id:5, img:'assets/images/Mask group.svg'},
     {id:6, img:'assets/images/logo-1 2.svg'},
     {id:7, img:'assets/images/logo 4.svg'},

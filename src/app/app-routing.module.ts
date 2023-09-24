@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: "contact-us", component:ContactUsComponent},
   { path: "join-altas", component:JoinUsComponent},
   { path: "map", component:MapComponent},
-  {path:"**",component:NotFoundComponent},
+  {path:"**",component:HomeComponent},
 ];
 
 @NgModule({

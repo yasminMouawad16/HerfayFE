@@ -44,7 +44,6 @@ export class MapComponent  implements OnInit {
   }
   ngOnInit(): void {
     this.langSubscription = this.language.currentLang.subscribe(res => {
-      debugger
       this.onGetData();
     });
     window.scrollTo(0, 0);
@@ -69,6 +68,7 @@ export class MapComponent  implements OnInit {
         const url = `users/getFilterOption?${queryString}`;
         this.getFilterOption(url);
         this.onFilter();
+        this.showList='crafts';
         return;
       }else{
         this.getFilterOption('users/getFilterOption');

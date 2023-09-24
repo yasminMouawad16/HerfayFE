@@ -11,7 +11,7 @@
 
 .about-atlas h4{
     font-size: 3.5rem;
-    font-weight: bold; 
+    font-weight: bold;
     margin-bottom: 45px;
     font-family: 'Trap-Bold';
 }
@@ -21,7 +21,7 @@
     font-weight: bold;
     font-family: 'Trap-Bold';
 }
- 
+
 .containForms{
     width: 100%;
     position: relative;
@@ -100,10 +100,10 @@
 
 .detailsBox input,
 .detailsBox select{
-    border: none; 
+    border: none;
     border-radius: 0;
     padding-left: 0;
-    outline: none; 
+    outline: none;
     font-size: 12px;
     background-color: transparent;
 }
@@ -117,7 +117,7 @@
     border-bottom: 1px solid #2F2C39;
 }
 
- 
+
 
 
 .detailsBox .personalInfo{
@@ -185,8 +185,8 @@
     font-weight: 500;
     margin-bottom: 20px;
 }
- 
- 
+
+
 .arDiraction{
     direction: rtl;
 }
@@ -206,7 +206,7 @@
 
 
 @media screen and (max-width: 600px) {
- 
+
     .content .about-atlas{
         padding: 40% 6%;
         height: 288px;
@@ -247,4 +247,8 @@
 }
 
 }
- 
+
+.formBox .btnSubmit[disabled]{
+  background-color: #cccccc;
+  cursor: no-drop;
+}

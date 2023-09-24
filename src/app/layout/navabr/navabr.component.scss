@@ -23,7 +23,7 @@
 
 .navbar-brand img{
     width: 30px;
-    height: 30px;
+    height: 43px;
 }
 
 .mCenter{
@@ -38,10 +38,11 @@
 
 .nav-link{
     color: #fff;
-    font-weight: 500;
+    // font-weight: 500;
     font-size: 17px;
     margin: 0 10px;
     cursor: pointer;
+    font-family: 'Trap-Black';
 }
 
 .nav-link.active{
@@ -56,6 +57,7 @@
 
 .dropdown-menu .dropdown-item{
     cursor: pointer;
+    font-family: 'Trap-Regular';
 }
 
 .btnJoin{

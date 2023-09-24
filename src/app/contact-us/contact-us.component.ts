@@ -13,12 +13,11 @@ export class ContactUsComponent implements OnInit{
   contactForm: FormGroup;
   checkLang = '';
 
-
   constructor(
     private language:LanguageService,
     private _formBuilder: FormBuilder,
     private toastr:ToastrService,
-    public http : HttpService
+    public http : HttpService,
     ){
       this.contactForm = this._formBuilder.group({
         name: ['',Validators.required],
@@ -58,6 +57,7 @@ handleUpdate(data: any) {
   sendMessage(){
     const body = {
       ...this.contactForm.value,
+      phone_Number: this.contactForm.get('phone_Number')?.value.toString()
     };
     this.http.post('users/contact',body).subscribe((res: any) => {
       this.toastr.success('Message Sent Successfully');

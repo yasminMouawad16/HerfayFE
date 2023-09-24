@@ -136,5 +136,8 @@
   "copper_metal_craft": "صناعات النحاس و المعادن",
   "crochet_macrame_knots": "الكروشية و المكرمية و العقدة",
   "jewelery_accessories": "الحلي و الإكسسوارات",
-  "palm_crafts": "النخيل"
+  "palm_crafts": "النخيل",
+  "export": "تصدير",
+  "local": "محلى",
+  "localAndexport": "محلى وتصدير"
 }

@@ -20,7 +20,7 @@
                   <h4>{{ 'PutFriend' | translate }}</h4>
                   <p>{{ 'joinContent1' | translate }}</p>
 
-                  <div class="detailsBox">
+                  <form [formGroup]="nominateForm" class="detailsBox">
                       <div class="personalInfo">
                         <h6>{{ 'YourInfo' | translate }}</h6>
                         <div class="form-group mb-4 row borderBottom">
@@ -28,7 +28,7 @@
                               <label class="form-label">{{ 'FullName' | translate }}</label>
                            </div>
                            <div class="col-sm-10">
-                             <input type="text" class="form-control">
+                             <input type="text" formControlName="nominee_Name" class="form-control">
                            </div>
                         </div>
 
@@ -37,7 +37,7 @@
                                <label class="form-label">{{ 'phoneNumber' | translate }}</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="nominee_Number" class="form-control">
                             </div>
                          </div>
 
@@ -46,7 +46,7 @@
                                <label class="form-label">{{ 'subject' | translate }}</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="nominee_Job" class="form-control">
                             </div>
                          </div>
 
@@ -55,10 +55,10 @@
                                <label class="form-label">{{ 'email' | translate }}</label>
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control">
+                                <input type="email" formControlName="nominee_Email" class="form-control">
                             </div>
                          </div>
-                        
+
                       </div>
 
                       <div class="nomineeInfo">
@@ -68,7 +68,7 @@
                                <label class="form-label">{{ 'Craft' | translate }}</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="nominee_Craft" class="form-control">
                             </div>
                          </div>
 
@@ -77,18 +77,18 @@
                                <label class="form-label">{{ 'CraftpersonName' | translate }}</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="nominee_Craft_Name" class="form-control">
                             </div>
                          </div>
 
-                      
+
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
                                <label class="form-label">{{ 'BusinesssPhone' | translate }}</label>
                             </div>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="business_Number" class="form-control">
                             </div>
                          </div>
 
@@ -97,14 +97,14 @@
                                <label class="form-label">{{ 'WebsiteLinks' | translate }}</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="website_Social_Link" class="form-control">
                             </div>
                          </div>
-                        
+
                       </div>
-                  </div>
-                  <button class="btnSubmit">{{ 'submit' | translate }}</button>
-            </div> 
+                  </form>
+                  <button [disabled]="nominateForm.invalid" (click)="submitNominate()" class="btnSubmit">{{ 'submit' | translate }}</button>
+            </div>
 
             <div [@contentAnimation]="registerVisible ? 'visible' : 'hidden'" class="divFormData">
 
@@ -113,7 +113,7 @@
                     you will be connected by the team to verify the information
                 </p>
 
-                <div class="detailsBox">
+                <form [formGroup]="registerForm" class="detailsBox">
                     <div class="personalInfo box2">
                         <h6>Personal Information</h6>
                         <div class="form-group mb-4 row borderBottom">
@@ -121,7 +121,7 @@
                                <label class="form-label">Full Name</label>
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="full_Name" class="form-control">
                             </div>
                          </div>
 
@@ -130,7 +130,7 @@
                                <label class="form-label">Phone Number | +2</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="phone_Number" class="form-control">
                             </div>
                          </div>
 
@@ -139,19 +139,19 @@
                                <label class="form-label">Job</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="job" class="form-control">
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
                                <label class="form-label">Email</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="email" formControlName="email" class="form-control">
                             </div>
                          </div>
-                    
+
                     </div>
 
                     <div class="businessInfo">
@@ -163,27 +163,29 @@
                                <label class="form-label">Brand Name</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="brand_Name" class="form-control">
                             </div>
                          </div>
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
-                               <label class="form-label">Local</label>
+                               <label class="form-label">Market</label>
                             </div>
                             <div class="col-sm-10">
-                                <select class="form-select">
-                                    <option></option>
+                                <select class="form-select" formControlName="market">
+                                    <option [value]="'Egyptian'">{{'export'|translate}}</option>
+                                    <option [value]="'Expert'">{{'local'|translate}}</option>
+                                    <option [value]="'EgyptianExpert'">{{'localAndexport'|translate}}</option>
                                 </select>
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
                                <label class="form-label">Craft</label>
                             </div>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="craft_Type" class="form-control">
                             </div>
                          </div>
 
@@ -192,7 +194,9 @@
                                <label class="form-label">Heritage</label>
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control">
+                              <select class="form-select" formControlName="heritage">
+                                <option *ngFor="let heritage of heritages" [value]="heritage">{{heritage}}</option>
+                              </select>
                             </div>
                          </div>
 
@@ -201,38 +205,38 @@
                                <label class="form-label">Product You Create</label>
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="product_You_Create" class="form-control">
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-7">
                                <label class="form-label">Number Of Employee</label>
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="how_Many_Employee" class="form-control">
                             </div>
                          </div>
                         </div>
-                        
+
                         <div>
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
                                <label class="form-label">Businesss type</label>
                             </div>
                             <div class="col-sm-7">
-                                <select class="form-select">
-                                    <option></option>
+                                <select class="form-select" formControlName="business_Type">
+                                    <option  *ngFor="let businessType of businessTypes" [value]="businessType">{{businessType}}</option>
                                 </select>
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-7">
                                <label class="form-label">Businesss Address</label>
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="business_Address" class="form-control">
                             </div>
                          </div>
 
@@ -241,43 +245,43 @@
                                <label class="form-label">Businesss Number | +2</label>
                             </div>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="business_Number" class="form-control">
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
                                <label class="form-label">Businesss Email</label>
                             </div>
                             <div class="col-sm-7">
-                                <input type="email" class="form-control">
+                                <input type="email" formControlName="business_Email" class="form-control">
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
                                <label class="form-label">Social Media</label>
                             </div>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="social_Media" class="form-control">
                             </div>
                          </div>
-                        
+
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
                                <label class="form-label">Website</label>
                             </div>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control">
+                                <input type="text" formControlName="web_Site" class="form-control">
                             </div>
                          </div>
                         </div>
                     </div>
-                </div>
-                <button class="btnSubmit">Submit</button>
-            </div> 
+                  </form>
+                <button [disabled]="registerForm.invalid" (click)="submitBusiness()" class="btnSubmit">Submit</button>
+            </div>
 
-              
+
         </div>
     </div>
 </div>
