@@ -31,7 +31,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    font-family: 'Trap-Bold';
 }
 
 
@@ -63,21 +62,21 @@
 
 .platform .textBox{
     width: 45%;
-    font-family: 'Trap-Bold';
+    // font-family: 'Trap-Bold';
 }
 
 .textBox h3{
     font-size: 38px;
     font-weight: bold;
-    font-family: 'Trap-Bold';
+    // font-family: 'Trap-Bold';
 }
 
 
 .textBox p{
   color: #4c4c4c;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 20px;
-    font-family: 'Trap-Medium';
+    // font-family: 'Trap-Medium';
 }
 .platform .slidImg{
     width: 50%;
@@ -100,12 +99,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 5rem 5%;
     background-color: #D5DDEF;
     margin: 5rem 0;
     position: relative;
-    font-family: 'Trap-Medium';
+    // font-family: 'Trap-Medium';
 }
 
 
@@ -130,23 +129,27 @@
 .details .collectionDiv{
     width: 50%;
 }
+.details .collectionDiv p{
+  margin-bottom: 10px;
+  font-size: 16px;
+}
 
 .item h4{
     font-weight: bold;
     font-size: 21px;
-    font-family: 'Trap-Bold';
+    // font-family: 'Trap-Bold';
 }
 
 
 .item h3{
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Trap-Bold';
+    // font-family: 'Trap-Bold';
 }
 
 
 .item p{
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 4px;
     color: #4e4a4a;
 }

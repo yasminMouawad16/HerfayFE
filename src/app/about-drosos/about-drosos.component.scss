@@ -17,9 +17,10 @@
 }
 
 .about-atlas h2{
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
     font-family: 'Trap-Bold';
+    text-transform: uppercase;
 }
 
 
@@ -30,7 +31,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    font-family: 'Trap-Medium';
 }
 
 .platform .left{
@@ -71,7 +71,7 @@ background-repeat: no-repeat;
 
 .textBox p{
   color: #4c4c4c;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
@@ -143,7 +143,6 @@ background-repeat: no-repeat;
     align-items: flex-start;
     justify-content: space-between;
     position: relative;
-    font-family: 'Trap-Medium';
 }
 
 .moreData .imgbox{
@@ -158,11 +157,10 @@ background-repeat: no-repeat;
 
 .moreData .textItem{
     width: 53%;
-    font-family: 'Trap-Medium';
 }
 
 .moreData .textItem p{
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .moreData .bottom{

@@ -66,9 +66,6 @@ export class AboutDrososComponent implements OnInit{
       {id:1, img:'assets/images/Group-4109.png'},
       {id:2, img:'assets/images/Group-4110.png'},
       {id:3, img:'assets/images/Group4111.png'},
-      {id:4, img:'assets/images/Group-4109.png'},
-      {id:5, img:'assets/images/Group-4110.png'},
-      {id:6, img:'assets/images/Group4111.png'},
   ];
 
   sppurtedProjects :any[] = [

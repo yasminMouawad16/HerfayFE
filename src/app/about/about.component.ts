@@ -33,13 +33,10 @@ export class AboutComponent implements OnInit{
         }
       },
     nav: false,
-    rtl: localStorage.getItem('lang') == 'ar' ? true : false
+    rtl: localStorage.getItem('lang') == 'ar' ? false : true
   }
 
   imagesCrafts :any[] = [
-      'assets/images/Shabab.png',
-      'assets/images/Maskgroup.png',
-      'assets/images/Kendaka.png',
       'assets/images/Shabab.png',
       'assets/images/Maskgroup.png',
       'assets/images/Kendaka.png',

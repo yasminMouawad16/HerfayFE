@@ -69,7 +69,7 @@
 
 .formBox{
     width: 85%;
-    position: absolute;
+    position: relative;
     margin: 7% auto;
     margin-left: 7%;
     padding: 2rem 1.5rem;
@@ -186,7 +186,9 @@
     margin-bottom: 20px;
 }
 
-
+.divFormData{
+  overflow: unset !important;
+}
 .arDiraction{
     direction: rtl;
 }

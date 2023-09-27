@@ -43,11 +43,11 @@
 }
 
 .green-content{
-  text-align: center;
-  padding: 3rem 0;
-  padding-top: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #fff;
-  height: 100%;
+  height: 400px;
 }
 .greenBox .green-content h2{
   font-weight: bold;
@@ -88,22 +88,25 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 4rem 6rem;
+    padding: 4rem 5rem;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .textBox h5{
-   font-size: 24px;
+   font-size: 30px;
    font-weight: bold;
    margin-bottom: 2rem;
    font-family: 'Trap-Bold';
 }
 
 .textBox p{
-    width: 58%;
-    font-size: 14px;
+    font-size: 18px;
     color: #e9e9e9;
     margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 

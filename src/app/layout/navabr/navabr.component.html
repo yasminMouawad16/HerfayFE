@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" [ngClass]="{'navItem-inverse': isScrolled}" routerLink="/home">
         <!-- <div *ngIf="isScrolled"><img src="assets/images/fav.png"> ATLAS HERAFY</div> -->
-        <img *ngIf="isScrolled" src="assets/images/logo-black.svg" class="w-100">
+        <img *ngIf="isScrolled" src="assets/images/logo-black.png" class="w-100">
         <img *ngIf="!isScrolled" src="assets/images/Logo-f2 .png" class="w-100">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,6 +31,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/contact-us"  [ngClass]="{'navItem-inverse': isScrolled}">{{ 'contact' | translate }}</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/map"  [ngClass]="{'navItem-inverse': isScrolled}">{{ 'map' | translate }}</a>
+          </li>
+
          </div>
 
           <div class="d-flex divJoin">

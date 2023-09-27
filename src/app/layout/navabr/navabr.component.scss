@@ -4,7 +4,7 @@
 }
 .navbar{
     padding: 15px 6%;
-    z-index: 3;
+    z-index: 55;
     width: 100%;
     position: fixed;
 }
@@ -18,12 +18,12 @@
 .navbar-brand{
     color: #fff;
     font-size: 17px;
-
+    padding: 0;
 }
 
 .navbar-brand img{
     width: 30px;
-    height: 43px;
+    height: 53px;
 }
 
 .mCenter{

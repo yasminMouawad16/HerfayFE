@@ -9,10 +9,11 @@
      </div>
 
      <div class="details">
-         <h4>Atlas Herafy is powered by</h4>
-         <h2>drosos (...)</h2>
+         <h4>{{'poweredBy'|translate}}</h4>
+         <img *ngIf="lang=='en'" alt="drosos (...)" src="../../../assets/images/drosos.png" class="drosos">
+         <img *ngIf="lang!='en'" alt="drosos (...)" src="../../../assets/images/drosos-ar.png" class="drosos">
          <hr>
-         <h6>Designed by</h6>
+         <h6>{{'designedBy'|translate}}</h6>
          <img src="assets/images/final-logo.png">
      </div>
 </div>

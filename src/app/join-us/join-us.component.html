@@ -18,7 +18,6 @@
             <div [@contentAnimation]="carfterVisible ? 'visible' : 'hidden'" class="divFormData">
 
                   <h4>{{ 'PutFriend' | translate }}</h4>
-                  <p>{{ 'joinContent1' | translate }}</p>
 
                   <form [formGroup]="nominateForm" class="detailsBox">
                       <div class="personalInfo">
@@ -108,17 +107,14 @@
 
             <div [@contentAnimation]="registerVisible ? 'visible' : 'hidden'" class="divFormData">
 
-                <h4>Register yourself on atlas herafy</h4>
-                <p>fill in the sections below to be included in our database,
-                    you will be connected by the team to verify the information
-                </p>
+                <h4>{{'personalInfoHead'|translate}}</h4>
 
                 <form [formGroup]="registerForm" class="detailsBox">
                     <div class="personalInfo box2">
-                        <h6>Personal Information</h6>
+                        <h6>{{'personal_information'|translate}}</h6>
                         <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-3">
-                               <label class="form-label">Full Name</label>
+                               <label class="form-label">{{'full_name'|translate}}</label>
                             </div>
                             <div class="col-sm-9">
                                 <input type="text" formControlName="full_Name" class="form-control">
@@ -127,7 +123,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-6">
-                               <label class="form-label">Phone Number | +2</label>
+                               <label class="form-label">{{'phone_number'|translate}} | +2</label>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" formControlName="phone_Number" class="form-control">
@@ -136,7 +132,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
-                               <label class="form-label">Job</label>
+                               <label class="form-label">{{'job'|translate}}</label>
                             </div>
                             <div class="col-sm-10">
                                 <input type="text" formControlName="job" class="form-control">
@@ -145,7 +141,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
-                               <label class="form-label">Email</label>
+                               <label class="form-label">{{'email'|translate}}</label>
                             </div>
                             <div class="col-sm-10">
                                 <input type="email" formControlName="email" class="form-control">
@@ -155,12 +151,12 @@
                     </div>
 
                     <div class="businessInfo">
-                        <h6 class="w-100">Business Information</h6>
+                        <h6 class="w-100">{{'business_information'|translate}}</h6>
 
                         <div>
                         <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-4">
-                               <label class="form-label">Brand Name</label>
+                               <label class="form-label">{{'brand_name'|translate}}</label>
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" formControlName="brand_Name" class="form-control">
@@ -169,7 +165,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
-                               <label class="form-label">Market</label>
+                               <label class="form-label">{{'market'|translate}}</label>
                             </div>
                             <div class="col-sm-10">
                                 <select class="form-select" formControlName="market">
@@ -182,7 +178,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-2">
-                               <label class="form-label">Craft</label>
+                               <label class="form-label">{{'craft'|translate}}</label>
                             </div>
                             <div class="col-sm-10">
                                 <input type="text" formControlName="craft_Type" class="form-control">
@@ -191,7 +187,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-3">
-                               <label class="form-label">Heritage</label>
+                               <label class="form-label">{{'heritage'|translate}}</label>
                             </div>
                             <div class="col-sm-9">
                               <select class="form-select" formControlName="heritage">
@@ -202,7 +198,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-6">
-                               <label class="form-label">Product You Create</label>
+                               <label class="form-label">{{'product_your_create'|translate}}</label>
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" formControlName="product_You_Create" class="form-control">
@@ -211,7 +207,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-7">
-                               <label class="form-label">Number Of Employee</label>
+                               <label class="form-label">{{'number_of_employee'|translate}}</label>
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" formControlName="how_Many_Employee" class="form-control">
@@ -222,7 +218,7 @@
                         <div>
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
-                               <label class="form-label">Businesss type</label>
+                               <label class="form-label">{{'business_type'|translate}}</label>
                             </div>
                             <div class="col-sm-7">
                                 <select class="form-select" formControlName="business_Type">
@@ -233,7 +229,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-7">
-                               <label class="form-label">Businesss Address</label>
+                               <label class="form-label">{{'business_address'|translate}}</label>
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" formControlName="business_Address" class="form-control">
@@ -242,7 +238,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-7">
-                               <label class="form-label">Businesss Number | +2</label>
+                               <label class="form-label">{{'business_number'|translate}} | +2</label>
                             </div>
                             <div class="col-sm-5">
                                 <input type="text" formControlName="business_Number" class="form-control">
@@ -251,7 +247,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
-                               <label class="form-label">Businesss Email</label>
+                               <label class="form-label">{{'business_email'|translate}}</label>
                             </div>
                             <div class="col-sm-7">
                                 <input type="email" formControlName="business_Email" class="form-control">
@@ -260,7 +256,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
-                               <label class="form-label">Social Media</label>
+                               <label class="form-label">{{'social_media'|translate}}</label>
                             </div>
                             <div class="col-sm-7">
                                 <input type="text" formControlName="social_Media" class="form-control">
@@ -269,7 +265,7 @@
 
                          <div class="form-group mb-4 row borderBottom">
                             <div class="col-sm-5">
-                               <label class="form-label">Website</label>
+                               <label class="form-label">{{'website'|translate}}</label>
                             </div>
                             <div class="col-sm-7">
                                 <input type="text" formControlName="web_Site" class="form-control">
@@ -278,7 +274,7 @@
                         </div>
                     </div>
                   </form>
-                <button [disabled]="registerForm.invalid" (click)="submitBusiness()" class="btnSubmit">Submit</button>
+                <button [disabled]="registerForm.invalid" (click)="submitBusiness()" class="btnSubmit">{{'submit'|translate}}</button>
             </div>
 
 
