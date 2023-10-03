@@ -40,6 +40,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { GallaryComponent } from './gallary/gallary.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SoonComponent } from './soon/soon.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -64,7 +65,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ContactUsComponent,
     JoinUsComponent,
     MapComponent,
-    GallaryComponent
+    GallaryComponent,
+    SoonComponent
   ],
   imports: [
     BrowserModule,
