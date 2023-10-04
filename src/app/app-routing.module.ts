@@ -12,15 +12,15 @@ import { MapComponent } from './map/map.component';
 
 
 const routes: Routes = [
-  // { path: "", pathMatch: "full", redirectTo: "home" },
-  // { path: "home", component:HomeComponent},
-  // { path: "about", component:AboutComponent},
-  // { path: "about-handcraft", component:AboutHandcraftComponent},
-  // { path: "about-drosos", component:AboutDrososComponent},
-  // { path: "contact-us", component:ContactUsComponent},
-  // { path: "join-altas", component:JoinUsComponent},
-  // { path: "map", component:MapComponent},
-  // {path:"**",component:HomeComponent},
+  { path: "", pathMatch: "full", redirectTo: "home" },
+  { path: "home", component:HomeComponent},
+  { path: "about", component:AboutComponent},
+  { path: "about-handcraft", component:AboutHandcraftComponent},
+  { path: "about-drosos", component:AboutDrososComponent},
+  { path: "contact-us", component:ContactUsComponent},
+  { path: "join-altas", component:JoinUsComponent},
+  { path: "map", component:MapComponent},
+  {path:"**",component:HomeComponent},
 ];
 
 @NgModule({
