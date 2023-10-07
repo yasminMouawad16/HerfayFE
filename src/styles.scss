@@ -148,6 +148,17 @@ html[dir="rtl"]{
       }
     }
   }
+  .form-select{
+    .slidImg{
+      direction: initial !important;
+    }
+  }
+  .mat-h1, .mat-headline-5, .mat-typography .mat-h1, .mat-typography .mat-headline-5, .mat-typography h1{
+    line-height: 72px !important;
+  }
+  .textBox p{
+    line-height: normal;
+  }
 
 }
 .gallary{
@@ -201,3 +212,6 @@ app-about-drosos{
   background: #0024b6;
 }
 .searchBox .mat-mdc-form-field{max-width: 195px;}
+.form-select{
+  padding: .375rem .75rem !important;
+}

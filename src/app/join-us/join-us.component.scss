@@ -103,7 +103,7 @@
 .detailsBox select{
     border: none;
     border-radius: 0;
-    padding-left: 0;
+    // padding-left: 0;
     outline: none;
     font-size: 12px;
     background-color: transparent;
@@ -143,6 +143,7 @@
 .businessInfo input,
 .businessInfo select{
     width: 100%;
+    opacity: 0.7;
 }
 
 .formBox .btnSubmit{
@@ -188,7 +189,7 @@
 }
 
 .divFormData{
-  overflow: unset !important;
+ // overflow: unset !important;
 }
 .arDiraction{
     direction: rtl;
@@ -206,7 +207,9 @@
     direction: ltr;
 }
 
-
+.w-45{
+  width: 45%;
+}
 
 @media screen and (max-width: 600px) {
 
