@@ -8,7 +8,7 @@ import { SerializationUtility } from '../shared/utility/serialization.utility';
 import * as _ from "lodash";
 import { Loader } from '@googlemaps/js-api-loader';
 import { environment } from 'src/environments/environment';
-import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import { Cluster, MarkerClusterer, MarkerClustererOptions } from '@googlemaps/markerclusterer';
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import { GallaryComponent } from '../gallary/gallary.component';
 
@@ -18,6 +18,7 @@ import { GallaryComponent } from '../gallary/gallary.component';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent  implements OnInit {
+  markerClusterer!: MarkerClusterer;
   langSubscription!: Subscription;
   filterModel: any = new ParamsModel();
 
@@ -129,6 +130,7 @@ export class MapComponent  implements OnInit {
           }
           return data
         })
+        this.showList='crafts';
         this.onMapInit();
       });
     }else{
@@ -232,10 +234,28 @@ export class MapComponent  implements OnInit {
             return marker;
           });
           const map = this.map;
-          new MarkerClusterer({map, markers});
+          // Create a MarkerClusterer instance
+          this.markerClusterer = new MarkerClusterer({map, markers});
+           // Add click event listener to the MarkerClusterer
+          google.maps.event.addListener(this.markerClusterer, 'click', (cluster:Cluster) => {
+            this.showMarkers(cluster);
+          });
         }
 
       })
+  }
+
+  showMarkers(cluster: any) {
+    const clusterMarkers = cluster.markers;
+
+    // Loop through the cluster markers
+    clusterMarkers.forEach((marker:any) => {
+      // Show each marker on the map
+      marker.setMap(this.map);
+    });
+
+    // Zoom to fit the individual markers
+    this.map.fitBounds(cluster._position);
   }
 
   onShowImagesModal() {
