@@ -247,16 +247,21 @@ export class MapComponent  implements OnInit {
 
   showMarkers(cluster: any) {
     const clusterMarkers = cluster.markers;
+    const individualMarkers:any = [];
 
-    // Loop through the cluster markers
+    // Remove cluster markers from map
     clusterMarkers.forEach((marker:any) => {
-      // Show each marker on the map
-      marker.setMap(this.map);
+      marker.setMap(null);
+      individualMarkers.push(marker);
     });
-
     // Zoom to fit the individual markers
-    this.map.fitBounds(cluster._position);
+    const bounds = new google.maps.LatLngBounds();
+    individualMarkers.forEach((marker:any) => {
+      bounds.extend(marker.getPosition());
+    });
+    this.map.fitBounds(bounds);
   }
+
 
   onShowImagesModal() {
     this.dialog.open(GallaryComponent, {
