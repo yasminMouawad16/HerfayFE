@@ -219,14 +219,10 @@ export class MapComponent  implements OnInit {
         });
         if(this.markers && this.markers.length >0){
           const markers = this.markers.map((item:any) => {
-            const markerIcon = {
-              url: `./assets/images/--herfs/${item.mainCraft.toLowerCase()}.png`,
-              scaledSize: new google.maps.Size(40, 40) // Set the desired size here
-            };
 
             const marker = new google.maps.Marker({
               position: item.location,
-              icon: markerIcon
+              icon: `./assets/images/--herfs/${item.mainCraft.toLowerCase()}.png`,
             });
             marker.addListener('click', () => {
               const user = this.sourceData.filter((user:any) => {
