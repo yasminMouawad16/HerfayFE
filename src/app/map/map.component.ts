@@ -222,7 +222,7 @@ export class MapComponent  implements OnInit {
 
             const marker = new google.maps.Marker({
               position: item.location,
-              icon: `./assets/images/--herfs/${item.mainCraft.toLowerCase()}.png`,
+              icon: `./assets/images/herf/${item.mainCraft.toLowerCase()}.png`,
             });
             marker.addListener('click', () => {
               const user = this.sourceData.filter((user:any) => {
