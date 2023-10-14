@@ -1,9 +1,12 @@
 <div class="gallary">
-  <owl-carousel-o [options]="customOptions">
+  <owl-carousel-o [options]="customOptions" *ngIf="imagesGallary.length>0">
     <ng-container *ngFor="let image of imagesGallary; let i = index">
         <ng-template carouselSlide>
           <img [src]="_sanitizer.bypassSecurityTrustResourceUrl(image.file)">
         </ng-template>
     </ng-container>
   </owl-carousel-o>
+  <div class="no-img" *ngIf="imagesGallary.length<=0">
+    {{'noImage'|translate}}
+  </div>
 </div>

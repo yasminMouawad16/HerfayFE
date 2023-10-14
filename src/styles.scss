@@ -68,6 +68,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     align-items: center;
     padding: 4px 0;
     cursor: pointer;
+    height: 38px;
     img{
       width: 25px;
     }
@@ -162,7 +163,8 @@ html[dir="rtl"]{
   .content .textBox h3{
     margin-bottom: 20px !important;
   }
-  app-why-atlas .content .textBox h3 {margin-bottom: 0px !important;}
+  app-why-atlas .content .textBox h3 {margin-bottom: 15px !important;}
+  app-why-atlas .content .textBox .iconItem h3{margin-bottom: 0px !important;}
 }
 .gallary{
   .owl-dots{
