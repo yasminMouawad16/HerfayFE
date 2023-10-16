@@ -220,10 +220,16 @@ export class MapComponent  implements OnInit {
         if(this.markers && this.markers.length >0){
           const markers = this.markers.map((item:any) => {
 
-            const marker = new google.maps.Marker({
+            var marker = new google.maps.Marker({
               position: item.location,
               icon: `./assets/images/herf/${item.mainCraft.toLowerCase()}.png`,
             });
+            if(item.mainCraft=='النسيج و الحياكة'){
+              marker = new google.maps.Marker({
+                position: item.location,
+                icon: `./assets/images/herf/weaving and knitting.png`,
+              });
+            }
             marker.addListener('click', () => {
               const user = this.sourceData.filter((user:any) => {
                 return user._id == item._id;
