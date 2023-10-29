@@ -26,6 +26,11 @@
     border-radius: 15px;
 
 }
+.content .imgBox iframe{
+  width: 95%;
+    border-radius: 15px;
+    height: 560px;
+}
 
 .imgBox button{
    border: none;
@@ -97,7 +102,9 @@
 
 
 @media screen and (max-width: 600px) {
-
+    .content {
+      padding: 0 7%;
+    }
     .content h3{
         font-size: 23px;
     }

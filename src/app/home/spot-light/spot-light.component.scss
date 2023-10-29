@@ -4,12 +4,8 @@
     margin-bottom: 5rem;
 }
 
-.content .greenBox{
-    width: 35%;
-    background-color: #048869;
-}
 .green-slider{
-  width: 100%;
+  width: 35%;
   height: 100%;
   text-align: center;
   h3{
@@ -17,10 +13,19 @@
     margin-bottom: 0px;
   }
   .slide{
+    text-align: center;
+    padding: 0 30px;
+    padding-top: 8%;
+    color: #fff;
+    background: linear-gradient(298deg, #048869 0%, rgba(4, 136, 105, 0.00) 99.16%);
+    h3{
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
     .img-container{
       max-width: 140px;
       height: 155px;
-      background-color: #fff;
+      // background-color: #fff;
       border-radius: 15px;
       margin: 15px auto;
       display: flex;
@@ -35,51 +40,39 @@
   }
 }
 
-.green-slider .slide{
-  text-align: center;
-  padding: 0 30px;
-  padding-top: 8%;
-  color: #fff;
-}
 
 .green-content{
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  height: 400px;
-}
-.greenBox .green-content h2{
-  font-weight: bold;
-  font-size: 6rem;
-  margin-bottom: 22px;
-  font-family: 'Trap-Bold';
-}
-
-.greenBox .green-content h3{
-  text-align: left;
-    margin-left: 24%;
-    font-size: 30px;
-    line-height: 80px;
-    font-weight: 100;
-}
-
-.greenBox .slide h3{
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.greenBox h4{
+  height: 100%;
+  width: 101%;
+  background-color: #048869;
+  h2{
+    font-weight: bold;
+    font-size: 6rem;
+    margin-bottom: 22px;
+    font-family: 'Trap-Bold';
+  }
+  h3{
+    text-align: left;
+      margin-left: 24%;
+      font-size: 30px;
+      line-height: 80px;
+      font-weight: 100;
+  }
+  h4{
     margin-inline-end: 34% !important;
     font-size: 30px !important;
     margin-bottom: 0px;
     display: flex;
     flex-direction: row-reverse;
-}
-
-.greenBox h4 img{
-    width: 25px !important;
-    margin-left: 2px;
+    img{
+      width: 25px !important;
+      margin-left: 2px;
+    }
+  }
 }
 
 .content .textBox{
@@ -134,13 +127,13 @@
 
 @media screen and (max-width: 600px) {
 
-    .content .greenBox{
-        width: 100%;
-    }
-
     .content .textBox{
         width: 100%;
         padding: 1rem 2rem;
+    }
+
+    .content .green-slider{
+      width: 100%;
     }
 
     .textBox h5{

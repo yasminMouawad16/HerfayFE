@@ -18,7 +18,7 @@ export class SpotLightComponent implements OnInit{
     navText: ['', '',''],
     items: 1,
     nav: false,
-    rtl: localStorage.getItem('lang') == 'ar' ? true : true
+    rtl: localStorage.getItem('lang') == 'ar' ? true : false
   }
   checkLang = '';
 

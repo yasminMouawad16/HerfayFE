@@ -213,7 +213,8 @@
 @media screen and (max-width: 600px) {
 
     .textBox{
-        padding-top: 60%;
+        padding: 7%;
+        padding-top: 30%;
     }
 
 
@@ -227,13 +228,15 @@
     }
 
     .content .searchBox{
-        width: 82%;
+        width: 86%;
     }
 
     .searchBox h3{
        font-size: 17px;
-       margin-bottom: 0px;
+       margin-bottom: 15px;
     }
+
+    .searchBox .box .boxItem mat-form-field{max-width: 100%;}
 
     .searchBox h6{
         font-size: 11px;

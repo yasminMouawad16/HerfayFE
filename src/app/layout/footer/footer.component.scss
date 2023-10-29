@@ -52,6 +52,8 @@
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+    color: #fff;
+    text-decoration: none;
 }
 
 .itemBox ul li a:hover{
@@ -87,6 +89,7 @@
     padding: 7px;
     cursor: pointer;
     border: 2px solid transparent;
+    color: #fff;
 }
 
 
@@ -129,6 +132,11 @@
 }
 
 @media screen and (max-width: 600px) {
+
+    .footer p{
+      width: 100%;
+      margin-left: 0;
+    }
 
     .footer .itemBox{
         width: 45%;
