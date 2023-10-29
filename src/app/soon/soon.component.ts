@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SoonComponent implements OnInit {
   ngOnInit(): void {
     // Set the date we're counting down to
-    var countDownDate = new Date("oct 15, 2023 20:00:00").getTime();
+    var countDownDate = new Date("nov 8, 2023 20:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {

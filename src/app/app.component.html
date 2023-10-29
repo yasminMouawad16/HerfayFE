@@ -1,9 +1,16 @@
-<app-navabr></app-navabr>
+<ng-container *ngIf="expried">
+    <app-navabr></app-navabr>
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 
-<app-footer></app-footer>
-<div class="loading" *ngIf="isLoading">
-    <mat-spinner></mat-spinner>
-</div>
-<!-- <app-soon></app-soon> -->
+    <app-footer></app-footer>
+    <div class="loading" *ngIf="isLoading">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!expried">
+    <app-soon></app-soon>
+</ng-container>
+
+
