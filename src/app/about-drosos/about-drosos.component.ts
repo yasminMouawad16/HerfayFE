@@ -69,13 +69,13 @@ export class AboutDrososComponent implements OnInit{
   ];
 
   sppurtedProjects :any[] = [
-    {id:1, img:'assets/images/1661441682logo 3.png'},
-    {id:2, img:'assets/images/Mask group (1).png'},
-    {id:3, img:'assets/images/0626202204483762b7e5254b3be.svg'},
-    {id:4, img:'assets/images/removebg.png'},
-    {id:5, img:'assets/images/Mask group.svg'},
-    {id:6, img:'assets/images/logo-1 2.svg'},
-    {id:7, img:'assets/images/logo 4.svg'},
+    {id:1, img:'assets/images/1661441682logo 3.png',url: 'https://www.mishkahandcrafts.com/'},
+    {id:2, img:'assets/images/Mask group (1).png',url: 'https://atharlina.com/'},
+    {id:3, img:'assets/images/0626202204483762b7e5254b3be.svg',url: 'https://azzafahmyfoundation.com/'},
+    {id:4, img:'assets/images/removebg.png',url: 'https://web.facebook.com/ElNidaaEgypt'},
+    {id:5, img:'assets/images/Mask group.svg',url: 'https://kendaka.co/'},
+    {id:6, img:'assets/images/logo-1 2.svg',url: 'http://verynile.org/'},
+    {id:7, img:'assets/images/logo 4.svg',url: 'https://nahdetelmahrousa.org/'},
   ];
 
 

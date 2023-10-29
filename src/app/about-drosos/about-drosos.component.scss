@@ -128,7 +128,9 @@ background-repeat: no-repeat;
     margin: 3rem auto;
     margin-bottom: 0;
 }
-
+.details .slidersImg a{
+  display: block;
+}
 
 .details .slidersImg img{
     width: auto !important;

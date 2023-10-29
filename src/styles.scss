@@ -143,6 +143,9 @@ html[dir="rtl"]{
     margin-top: 40px;
   }
   app-spot-light{
+    .green-content{
+      h4{margin-top: 15px;}
+    }
     #contentID{
       .textBox{
         background: linear-gradient(-90deg,rgba(0, 0, 0, 0.9) -12.78%, rgba(0, 0, 0, 0.1) 70.69%), url('./assets/images/_DSC82391.png') !important;
@@ -217,6 +220,7 @@ html[dir="rtl"]{
   height: 100%;
 }
 .greenBox .owl-stage .owl-item{height: 100%;}
+.green-slider .owl-stage .owl-item.active .green-content{width: 101% !important;}
 app-about-drosos{
   .content{overflow: hidden;}
   owl-carousel-o{
