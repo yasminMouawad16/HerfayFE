@@ -14,6 +14,7 @@ export class NavabrComponent implements OnInit {
   langSubscription!: Subscription;
 
   isScrolled = false;
+  isCollapsed = false;
   checkedLang = '';
 
   enDiraction = {
