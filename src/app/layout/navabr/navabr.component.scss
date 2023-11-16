@@ -33,6 +33,13 @@
 
 .divJoin{
    align-items: center;
+   .nav-item{
+    img{
+      width: 50px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
 }
 
 
@@ -115,6 +122,9 @@
 
     .divJoin{
         flex-direction: column;
+        .nav-item{
+          margin-bottom: 10px;
+        }
      }
      .nav-link{
       color: #000;

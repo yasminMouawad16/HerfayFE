@@ -41,8 +41,12 @@
 
           <div class="d-flex divJoin">
             <li class="nav-item">
-              <button (click)="changeLanguage()" class="nav-link" [ngClass]="{'navItem-inverse': isScrolled}">
-                 <i class="fa-solid fa-globe"></i> {{ 'lang' | translate }}</button>
+              <img (click)="changeLanguage()" *ngIf="currentLang == 'en'" alt="ar" src="../../../assets/images/ar.png">
+              <img (click)="changeLanguage()" *ngIf="currentLang == 'ar'" alt="en" src="../../../assets/images/en.png">
+
+
+              <!-- <button (click)="changeLanguage()" class="nav-link" [ngClass]="{'navItem-inverse': isScrolled}">
+                 <i class="fa-solid fa-globe"></i> {{ 'lang' | translate }}</button> -->
             </li>
 
             <li class="nav-item">

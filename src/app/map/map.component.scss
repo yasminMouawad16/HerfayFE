@@ -406,31 +406,54 @@ html[dir="rtl"]{
       }
     }
   }
-  .explore-btn{
-    position: fixed;
-    left: 0;
-    top: 140px;
-    width: 50px;
-    height: 59px;
-    background-color: #fff;
-    border: none;
-    z-index: 99999;
-  }
-}
-@media(max-width: 768px){
   .content .indicators{
-    right: 0%;
-    width: calc(100% - 50px);
-    top: 70px;
+    position: fixed;
+    inset-inline-start: 0;
+    width: 50px;
+    top: 100px;
     box-shadow: none;
-    #menu_Id{
-      .bolts{
-        display: none;
+    button{
+      &#menu_Id{
+        border-top-right-radius: 12px;
+       border-bottom-right-radius: 12px;
+       border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+        padding: 17px 10px !important;
+        .bolts{
+          width: 35px;
+          div{
+            div{
+              width: 7px !important;
+              height: 7px !important;
+            }
+          }
+        }
+        span{
+          display: none !important;
+        }
+        i{
+          display: none !important;
+        }
       }
     }
   }
+  .explore-btn{
+    position: fixed;
+    inset-inline-start: 0;
+    top: 170px;
+    width: 50px;
+    height: 55px;
+    background-color: #fff;
+    border: none;
+    z-index: 50;
+    font-size: 22px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
+@media(max-width: 768px){
   .content .explore{
-    top: 140px;
+    top: 170px;
     width: 100%;
     left: 0%;
   }

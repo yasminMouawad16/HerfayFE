@@ -172,6 +172,22 @@ html[dir="rtl"]{
   app-spot-light .green-slider owl-carousel-o{
     direction: ltr !important;
   }
+  @media(max-width: 992px){
+    .content .indicators{
+      #menu_Id{
+        border-top-left-radius: 12px !important;
+        border-bottom-left-radius: 12px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+      }
+    }
+    .explore-btn{
+      border-top-left-radius: 12px !important;
+      border-bottom-left-radius: 12px !important;
+      border-top-right-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+    }
+  }
 }
 .gallary{
   .owl-dots{

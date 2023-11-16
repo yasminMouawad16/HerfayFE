@@ -5,7 +5,7 @@
     <div class="content">
       <div class="container">
         <div class="mobile-btns">
-          <button class="indicators-btn" (click)="showMobileIndicators = !showMobileIndicators">
+          <!-- <button class="indicators-btn" (click)="showMobileIndicators = !showMobileIndicators">
             <div class="d-flex align-items-center">
               <div class="bolts">
                 <div class="d-flex">
@@ -18,7 +18,7 @@
                 </div>
               </div>
             </div>
-          </button>
+          </button> -->
           <button class="explore-btn" (click)="showMobileExplore = !showMobileExplore">
             <i [ngClass]="{'fa-x': showMobileExplore}" class="fa-solid fa-search"></i>
           </button>
@@ -236,7 +236,7 @@
 
 
         </div>
-        <div [ngClass]="{'hide': !showMobileIndicators}" class="indicators">
+        <div class="indicators">
           <button mat-button  id="menu_Id" [matMenuTriggerFor]="menu">
             <div class="d-flex align-items-center">
               <div class="bolts">

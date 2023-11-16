@@ -90,9 +90,13 @@ export class MapComponent  implements OnInit {
 
   onFilterOption(){
     this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
-    const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
-    const url = `users/getFilterOption?${queryString}`;
-    this.getFilterOption(url);
+    if(Object.values(this.filterModel).includes('null')){
+      this.onResetAll();
+    }else{
+      const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
+      const url = `users/getFilterOption?${queryString}`;
+      this.getFilterOption(url);
+    }
   }
 
   getFilterOption(url: any) {
