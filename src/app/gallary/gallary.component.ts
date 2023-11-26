@@ -22,6 +22,7 @@ export class GallaryComponent implements OnInit {
     nav: false
   }
 imagesGallary:any = [];
+getData: boolean = false;
   constructor(
     @Inject(MAT_DIALOG_DATA) public data:any,
     public _sanitizer: DomSanitizer,
@@ -31,6 +32,7 @@ imagesGallary:any = [];
   ngOnInit(): void {
     this.http.get(`users/getUserImages/${this.data.index}`).subscribe((res: any) => {
       this.imagesGallary = res.data.files;
+      this.getData = true;
     });
   }
 }

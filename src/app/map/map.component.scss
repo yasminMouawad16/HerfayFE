@@ -106,12 +106,13 @@ html[dir="rtl"]{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 15px;
+        margin: 15px 0;
         h3{margin-bottom: 0px;}
         button{
-          &:first-of-type{margin-inline-end: 7px;}
+          // &:first-of-type{margin-inline-end: 7px;}
           background-color: transparent;
           border: none;
+          cursor: pointer;
         }
       }
       .crafts{
@@ -139,6 +140,7 @@ html[dir="rtl"]{
           }
           .craft-img{
             width: 140px;
+            object-fit: contain;
           }
           .details{
             padding-inline-start: 7px;
@@ -290,7 +292,7 @@ html[dir="rtl"]{
     display: flex;
     .craft-img{
       width: 150px;
-      object-fit: cover;
+      object-fit: contain;
     }
     .craft-about{
       width: calc(100% - 150px);

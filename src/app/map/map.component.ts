@@ -157,13 +157,15 @@ export class MapComponent  implements OnInit {
   onResetAll() {
     this.markers=[];
     this.filterModel = new ParamsModel();
-    this.getFilterOption('users/getFilterOption');
+    this.onGetData();
   }
 
   userDetailsInfo: any;
+  isSocialmedia: boolean = false;
   onOpenUserDetails(user:any): void {
     this.crafterDetails = true;
     this.userDetailsInfo = user;
+    Object.keys(this.userDetailsInfo?.basicInfo.socialMedia).length > 0 ? this.isSocialmedia=true : this.isSocialmedia = false;
     const mapRefirect = {
       geoLocation: user.geoLocation,
       zoom: 18,
@@ -226,12 +228,18 @@ export class MapComponent  implements OnInit {
 
             var marker = new google.maps.Marker({
               position: item.location,
-              icon: `./assets/images/herf/${item.mainCraft.toLowerCase()}.png`,
+              icon: {
+                url:`./assets/images/herf/${item.mainCraft.toLowerCase()}.png`,
+                scaledSize: new google.maps.Size(40, 40),
+              }
             });
             if(item.mainCraft=='النسيج و الحياكة'){
               marker = new google.maps.Marker({
                 position: item.location,
-                icon: `./assets/images/herf/weaving and knitting.png`,
+                icon: {
+                  url : `./assets/images/herf/weaving and knitting.png`,
+                  scaledSize: new google.maps.Size(40, 40),
+                },
               });
             }
             marker.addListener('click', () => {

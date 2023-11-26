@@ -6,7 +6,7 @@
         </ng-template>
     </ng-container>
   </owl-carousel-o>
-  <div class="no-img" *ngIf="imagesGallary.length<=0">
+  <div class="no-img" *ngIf="imagesGallary.length<=0 && getData">
     {{'noImage'|translate}}
   </div>
 </div>

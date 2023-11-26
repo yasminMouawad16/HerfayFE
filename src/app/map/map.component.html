@@ -106,6 +106,7 @@
               <ng-container *ngIf="showList=='crafts'">
                 <div class="pagination">
                   <h3>{{'crafts_list'|translate}}</h3>
+                  <button (click)="onResetAll();showList='search';"><i class="fa-solid fa-chevron-left"></i> {{'back'|translate}}</button>
                   <!-- <div>
                     <button (click)="nextAndPrev('prev')"><i class="fa-solid fa-chevron-left"></i></button>
                     <button (click)="nextAndPrev('next')"><i class="fa-solid fa-chevron-right"></i></button>
@@ -152,19 +153,31 @@
               <div class="craft-info">
                 <img class="craft-img" alt="caft-img" src="../../assets/images/crafter-img.png">
                 <div class="craft-about">
-                  <h4>{{userDetailsInfo.basicInfo.handicrafterName || 'Unknown'}}</h4>
+                  <!-- <h4>{{userDetailsInfo.basicInfo.handicrafterName || 'Unknown'}}</h4> -->
                   <span>{{userDetailsInfo.basicInfo.brandName || 'Unknown'}}</span>
-                  <h5>{{'contact_info'| translate}}</h5>
+                  <h5>{{'location'| translate}}</h5>
                   <p class="location">
                     <i class="fa-solid fa-location-dot"></i>
                     {{userDetailsInfo.basicInfo.address.district}} , {{userDetailsInfo.basicInfo.address.governorate}} , {{userDetailsInfo.basicInfo.address.village}}
                   </p>
-                  <h5>{{'social_media'|translate}}</h5>
-                  <div class="socials">
-                    <a [href]="userDetailsInfo?.basicInfo.socialMedia.facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a [href]="userDetailsInfo?.basicInfo.socialMedia.twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a [href]="userDetailsInfo?.basicInfo.socialMedia.instagram"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a [href]="userDetailsInfo?.basicInfo.socialMedia.instagram"><i class="fa-brands fa-linkedin"></i></a>
+                  <h5>
+                    <i class="fa-solid fa-globe"></i>
+                    <ng-container *ngIf="isSocialmedia==true">
+                      {{'digital_channels'|translate}}
+                    </ng-container>
+                    <ng-container *ngIf="isSocialmedia==false">
+                      {{'no_digital'|translate}}
+                    </ng-container>
+                  </h5>
+                  <div class="socials" *ngIf="isSocialmedia==true">
+                    <a *ngIf="userDetailsInfo?.basicInfo.socialMedia.facebook" [href]="userDetailsInfo?.basicInfo.socialMedia.facebook" target="_blank">
+                      <i class="fa-brands fa-facebook-f"></i></a>
+                    <a *ngIf="userDetailsInfo?.basicInfo.socialMedia.twitter"
+                     [href]="userDetailsInfo?.basicInfo.socialMedia.twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a *ngIf="userDetailsInfo?.basicInfo.socialMedia.instagram"
+                    [href]="userDetailsInfo?.basicInfo.socialMedia.instagram" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a *ngIf="userDetailsInfo?.basicInfo.socialMedia.linkedin"
+                    [href]="userDetailsInfo?.basicInfo.socialMedia.linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                   </div>
                   <div class="actions">
                     <a routerLink="/contact-us">{{'get_contact'|translate}}</a>

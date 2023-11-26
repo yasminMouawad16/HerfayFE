@@ -83,7 +83,7 @@
   "clear": "إزالة",
   "back": "رجوع",
   "crafts_details": "تفاصيل الحرفة",
-  "gallery": "صالة عرض",
+  "gallery": "معرض الصور",
   "get_contact": "احصل على جهة اتصال",
   "brand_information": "معلومات العلامة التجارية",
   "handicrafterName": "اسم صاحب الحرفة",
@@ -167,5 +167,8 @@
   "skillful_craftspeople": "حرفيين مبدعين",
   "distinctive_crafts": "حرف متنوعة",
   "noImage": "لا يوجد صور",
-  "recycling": "إعادة التدوير"
+  "recycling": "إعادة التدوير",
+  "location": "الموقع",
+  "digital_channels": "القنوات الرقمية",
+  "no_digital": "لا يوجد قنوات رقمية"
 }

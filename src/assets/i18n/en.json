@@ -77,7 +77,7 @@
   "footerP1": "Connecting you to skilled",
   "footerP2": "craftspeople",
   "explore_handcarafts": "Explore handicrafts in Egypt",
-  "color_indicators": "Color Indicators",
+  "color_indicators": "Icon Indicator",
   "crafts_people_list": "Craftspeople",
   "search": "Search",
   "clear": "Clear",
@@ -166,5 +166,8 @@
   "skillful_craftspeople": "Skillful craftspeople",
   "distinctive_crafts": "Distinctive Crafts",
   "noImage": "There is no images",
-  "recycling": "Recycling"
+  "recycling": "Recycling",
+  "location": "Location",
+  "digital_channels": "Digital Channels",
+  "no_digital": "No digital existence"
 }
