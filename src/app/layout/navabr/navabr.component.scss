@@ -36,7 +36,7 @@
    align-items: center;
    .nav-item{
     img{
-      width: 50px;
+      width: 40px;
       border-radius: 4px;
       cursor: pointer;
     }
@@ -92,7 +92,7 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .navbar-toggler{
     border-color: #000;
     &:focus{

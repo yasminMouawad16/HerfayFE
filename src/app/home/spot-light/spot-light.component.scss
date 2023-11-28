@@ -124,7 +124,9 @@
 .enDiraction{
     direction: ltr;
 }
-
+@media screen and (max-width: 992px){
+  .content .textBox,.content .green-slider{width: 100%;}
+}
 @media screen and (max-width: 600px) {
 
     .content .textBox{

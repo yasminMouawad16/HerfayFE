@@ -62,6 +62,7 @@
 
               </ng-container>
               <ng-container *ngIf="showList=='filter'">
+                <input class="search" type="text" placeholder="{{'search_key'|translate}}" [(ngModel)]="filterModel.search">
                 <select (change)="filter()" [(ngModel)]="filterModel.mainCraft">
                   <option [value]="null">{{'selet_craft'|translate}}</option>
                   <option *ngFor="let craft of filterObj?.mainCraft" [value]="craft">{{craft}}</option>
@@ -106,7 +107,10 @@
               <ng-container *ngIf="showList=='crafts'">
                 <div class="pagination">
                   <h3>{{'crafts_list'|translate}}</h3>
-                  <button (click)="onResetAll();showList='search';"><i class="fa-solid fa-chevron-left"></i> {{'back'|translate}}</button>
+                  <button (click)="onResetAll();showList='search';">
+                    <i class="fa-solid fa-chevron-left"></i>
+                     <span>{{'back'|translate}}</span>
+                    </button>
                   <!-- <div>
                     <button (click)="nextAndPrev('prev')"><i class="fa-solid fa-chevron-left"></i></button>
                     <button (click)="nextAndPrev('next')"><i class="fa-solid fa-chevron-right"></i></button>

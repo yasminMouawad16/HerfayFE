@@ -133,19 +133,28 @@ html[dir="rtl"]{
             }
           }
         }
+        .pagination{
+          button{
+            flex-direction: row;
+            i{
+              transform: rotate(180deg);
+              margin-bottom: -5px;
+            }
+          }
+        }
       }
     }
   }
   .crafter-details .craft-info .craft-about .actions button, .crafter-details .craft-info .craft-about .actions a{
-    font-size: 13px !important;
-    padding: 10px !important;
+    font-size: 11px !important;
+    padding: 10px 7px !important;
   }
   .greenBox h4{
     margin-top: 40px;
   }
   app-spot-light{
     .green-content{
-      h4{margin-top: 15px;}
+      h4{margin-top: 35px;}
     }
     #contentID{
       .textBox{
@@ -250,6 +259,9 @@ app-about-drosos{
 .searchBox .mat-mdc-form-field{max-width: 195px;}
 .form-select{
   padding: .375rem .75rem !important;
+}
+@media screen and (max-width: 600px){
+  .owl-carousel .owl-item img{width: 100% !important;}
 }
 // @media(max-width: 992){
 //   .indicators-menu{

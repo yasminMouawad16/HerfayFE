@@ -93,7 +93,7 @@
 }
 
 .iconItem img{
-    margin-right: 9px;
+    margin-inline-end: 9px;
     width: 40px;
     margin-top: 5px;
 }
@@ -121,16 +121,14 @@
 }
 
 
-.imgIcon{
-    margin-left: 9px;
+@media screen and (max-width: 992px){
+  .textBox .icons{width: 100%;}
 }
-
-
 
 @media screen and (max-width: 600px) {
 
     .content{
-        padding-top: 100px;
+        padding-top: 0px;
         width: 92%;
     }
 
@@ -144,8 +142,13 @@
         width: 100%;
         order: 1;
     }
-
-    .textBox .icons{
-        width: 97%
-    }
 }
+
+@media screen and (max-width: 380px) {
+
+  .content{
+      padding-top: 120px;
+  }
+}
+
+

@@ -119,7 +119,7 @@ export class MapComponent  implements OnInit {
 
   pagesNumber = 1;
   onFilter() {
-    if(this.filterModel.mainCraft || this.filterModel.subCraft || this.filterModel.city || this.filterModel.heritage){
+    if(this.filterModel.mainCraft || this.filterModel.subCraft || this.filterModel.city || this.filterModel.heritage ||this.filterModel.search){
       this.filterModel = _(this.filterModel).omitBy(_.isUndefined).omitBy(_.isNull).value();
       const queryString = SerializationUtility.ObjectToKeyValueString(this.filterModel);
       const url = `users/getAll?${queryString}`;
